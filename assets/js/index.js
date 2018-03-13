@@ -1,6 +1,6 @@
 $(() => {
-	
-	function Dish(name, price, ingredients){
+
+	function Dish(name, price, ingredients) {
 		this.name = name;
 		this.price = price;
 		this.ingredients = ingredients;
@@ -13,7 +13,7 @@ $(() => {
 		drinks: [],
 
 		display() {
-			for(let key in Menu){
+			for (let key in Menu) {
 				Menu[key].forEach((value) => {
 					let list = $("<ul>").append($("<h3>").text(value.name))
 						.append($("<li>").text("price: $" + value.price))
@@ -23,7 +23,7 @@ $(() => {
 			}
 		},
 	}
-	
+
 	Menu.drinks.push(new Dish(
 		"coke",
 		"1.00",

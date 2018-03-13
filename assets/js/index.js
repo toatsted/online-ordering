@@ -8,21 +8,39 @@ $(() => {
 
 	let Menu = {
 		main: [],
-		appetizers: [],
+		starters: [],
 		desserts: [],
-		drinks: []
+		drinks: [],
+
+		display() {
+			for(let key in Menu){
+				Menu[key].forEach((value) => {
+					let list = $("<ul>").append($("<h3>").text(value.name))
+						.append($("<li>").text("price: $" + value.price))
+						.append($("<li>").text("ingredients: " + value.ingredients));
+					$("#" + key).append(list)
+				})
+			}
+		},
 	}
 	
 	Menu.drinks.push(new Dish(
-		name = "coke",
-		price = "1.00",
-		ingredients = "coke ingredients"
+		"coke",
+		"1.00",
+		"coke and ice"
 	));
 
-	Menu.drinks.forEach((value, index) => {
-		console.log(value.name);
-		console.log(value.price);
-		console.log(ingredients);
-	})
+	Menu.drinks.push(new Dish(
+		"pepsi",
+		".75",
+		"pepsi and ice"
+	));
 
+	Menu.starters.push(new Dish(
+		"kemchi fries",
+		"2.00",
+		"kemchi and fries"
+	));
+
+	Menu.display();
 });

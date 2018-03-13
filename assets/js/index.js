@@ -1,12 +1,18 @@
-$(() => {
 
-	function Dish(name, price, ingredients) {
+$(() => {
+	$("input").attr("autocomplete", "off");
+
+	function Dish(menu, name, price, ingredients) {
+
+		this.menu = menu;
 		this.name = name;
 		this.price = price;
 		this.ingredients = ingredients;
+		Menu[this.menu].push(this);
 	}
 
 	let Menu = {
+
 		main: [],
 		starters: [],
 		desserts: [],
@@ -15,8 +21,10 @@ $(() => {
 		display() {
 			$(".menu").empty();
 			for (let key in Menu) {
+
 				if(Array.isArray(Menu[key])){
 					Menu[key].forEach((value) => {
+
 						let list = $("<ul>").addClass("item").append($("<h3>").text(value.name))
 							.append($("<li>").text("price: $" + value.price))
 							.append($("<li>").text("ingredients: " + value.ingredients.join(", ")));
@@ -24,49 +32,27 @@ $(() => {
 					})
 				}
 			}
-		},
+		}
 	}
 
 	$("form").on("submit", (event) => {
 		event.preventDefault();
 		
-		let key = ($("#main-button").prop("checked")) ? "main" : 
+		let menu = ($("#main-button").prop("checked")) ? "main" : 
 			($("#starters-button").prop("checked")) ? "starters" : 
 			($("#desserts-button").prop("checked")) ? "desserts" : "drinks";
 
-		Menu[key].push(new Dish(
-			$("#name-input").val(),
-			parseFloat($("#price-input").val()),
-			$("#ingredients-input").val().split("+")
-		));
+		new Dish(menu, $("#name-input").val(),
+			$("#price-input").val(),
+			$("#ingredients-input").val().split("+"));
 
 		$("input").val("");
-		Menu.display();	
+		Menu.display(); 
 	})
 
-	Menu.drinks.push(new Dish(
-		"coke",
-		1.00,
-		["coke", "ice"]
-	));
-
-	Menu.drinks.push(new Dish(
-		"pepsi",
-		.75,
-		["pepsi", "ice"]
-	));
-
-	Menu.starters.push(new Dish(
-		"kemchi fries",
-		2.00,
-		["kemchi", "fries"]
-	));
-
-	Menu.main.push(new Dish(
-		"hamburger",
-		6.00,
-		["buns", "beef", "lettuce", "tomato"]
-	));
+	new Dish("drinks", "coke", 1.50, ["coke", "ice"]);
+	new Dish("starters", "kemchi fries", 3, ["kemchi", "fries"]);
+	new Dish("main", "hamburger", 5.50, ["beef", "buns", "lettuce", "tomato"]);
 
 	Menu.display();
 });

@@ -1,16 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Chi'Lantro delivery</title>
-	
 	<!-- bootstrap stylesheet -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- index.css stylesheet -->
 	<link rel="stylesheet" href="./assets/css/index.css" type="text/css">
+	<style>
+	h1 {
+		border-bottom: 2px #000 solid;
+		border-right: 2px #000 solid;
+	}
+
+	h3 {
+		font-size: 20px;
+		display: inline-block;
+		border-bottom: dotted #000 1px;
+	}
+
+	.item {
+		margin-bottom: 15px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #000;
+	}
+
+	form {
+		position: fixed;
+		bottom: 0;
+		text-align: right;
+		background: #eee;
+		border: 2px solid #333;
+		padding: 20px;
+	}
+
+	form h1 {
+		text-align: left;
+	}
+
+	#radio-list {
+		text-align: center;
+	}
+
+	form input {
+		margin-right: 35px;
+	}
+
+
+	</style>
 </head>
+
 <body>
-	
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				<h1>main</h1>
+				<div class="menu" id="main"></div>
+			</div>
+			<div class="col-3">
+				<h1>starters</h1>
+				<div class="menu" id="starters"></div>
+			</div>
+			<div class="col-3">
+				<h1>desserts</h1>
+				<div class="menu" id="desserts"></div>
+			</div>
+			<div class="col-3">
+				<h1>drinks</h1>
+				<div class="menu" id="drinks"> </div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<form>
+					<h1>Add a dish</h1>
+					<ul id="radio-list">
+						<label for="main-button">main</label>
+						<input name="menu-button" type="radio" id="main-button">
+						<label for="starters-button">starters</label>
+						<input name="menu-button" type="radio" id="starters-button">
+						<label for="desserts-button">desserts</label>
+						<input name="menu-button" type="radio" id="desserts-button">
+						<label for="drinks-button">drinks</label>
+						<input name="menu-button" type="radio" id="drinks-button">
+					</ul>
+					<label for="name-input">name</label>
+					<input type="text" id="name-input">
+					<label for="price-input">price</label>
+					<input type="text" id="price-input">
+					<label for="ingredients-input">ingredients</label>
+					<input type="text" id="ingredients-input">
+					<p>separate ingredients with a '+'.</p>
+					<p>ex: peanut butter+jelly+bread</p>
+					<button type="submit">submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- bootstrap .js -->
@@ -19,4 +107,5 @@
 	<!-- index.js -->
 	<script src="./assets/js/index.js"></script>
 </body>
+
 </html>

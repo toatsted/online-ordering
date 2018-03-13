@@ -1,0 +1,37 @@
+.menu-title {
+	border-bottom: 2px #000 solid;
+	border-right: 2px #000 solid;
+}
+
+.dish-name {
+	font-size: 20px;
+	display: inline-block;
+	border-bottom: dotted #000 1px;
+}
+
+.dish {
+	margin-bottom: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+}
+
+form {
+	position: fixed;
+	bottom: 0;
+	text-align: right;
+	background: #eee;
+	border: 2px solid #333;
+	padding: 20px;
+}
+
+form h1 {
+	text-align: left;
+}
+
+#radio-list {
+	text-align: center;
+}
+
+form input {
+	margin-right: 35px;
+}

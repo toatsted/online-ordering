@@ -53,8 +53,8 @@ $(() => {
 	})
 
 	new Dish("drinks", "coke", 1.50, ["coke", "ice"]);
-	new Dish("starters", "kemchi fries", 3, ["kemchi", "fries"]);
+	new Dish("starters", "kimchi fries", 3, ["kimchi", "fries"]);
 	new Dish("main", "hamburger", 5.50, ["beef", "buns", "lettuce", "tomato"]);
- 
+
 	Menu.display();
 });

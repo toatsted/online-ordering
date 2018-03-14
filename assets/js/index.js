@@ -29,7 +29,7 @@ $(() => {
 						$("#" + key).append($("<ul>").addClass("dish")
 							.append($("<h3>").addClass("dish-name").text(value.name))
 							.append($("<li>").text("price: $" + value.price))
-							.append($("<li>").text("ingredients: " + value.ingredients.join(", ")))) ;
+							.append($("<li>").text("ingredients: " + value.ingredients.join(", "))));
 					})
 				}
 			}

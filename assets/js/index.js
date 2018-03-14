@@ -1,4 +1,3 @@
-
 $(() => {
 	$("input").attr("autocomplete", "off");
 
@@ -61,3 +60,4 @@ $(() => {
 
 	Menu.display();
 });
+

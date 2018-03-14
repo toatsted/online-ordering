@@ -2,15 +2,18 @@
 $(() => {
 	$("input").attr("autocomplete", "off");
 
+	// Dish constructor
 	function Dish(menu, name, price, ingredients) {
 
 		this.menu = menu;
 		this.name = name;
 		this.price = price;
 		this.ingredients = ingredients;
+		// add this Dish to the propper menu
 		Menu[this.menu].push(this);
 	}
 
+	// Menu object
 	let Menu = {
 
 		main: [],
@@ -21,7 +24,6 @@ $(() => {
 		display() {
 			$(".menu").empty();
 			for (let key in Menu) {
-
 				if(Array.isArray(Menu[key])){
 					Menu[key].forEach((value) => {
 						$("#" + key).append($("<ul>").addClass("dish")
@@ -34,6 +36,7 @@ $(() => {
 		}
 	}
 
+	// Add a Dish form handler
 	$("form").on("submit", (event) => {
 		event.preventDefault();
 		
@@ -52,6 +55,6 @@ $(() => {
 	new Dish("drinks", "coke", 1.50, ["coke", "ice"]);
 	new Dish("starters", "kemchi fries", 3, ["kemchi", "fries"]);
 	new Dish("main", "hamburger", 5.50, ["beef", "buns", "lettuce", "tomato"]);
-
+ 
 	Menu.display();
 });

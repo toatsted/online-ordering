@@ -18,7 +18,7 @@ $(() => {
 
 		main: [],
 		starters: [],
-		desserts: [],
+		 : [],
 		drinks: [],
 
 		display() {
@@ -45,7 +45,7 @@ $(() => {
 		let menu = ($("#main-button").prop("checked")) ? "main" : 
 			($("#starters-button").prop("checked")) ? "starters" : 
 			($("#desserts-button").prop("checked")) ? "desserts" : "drinks";
-
+			
 		new Dish(menu, $("#name-input").val(),
 			$("#price-input").val(),
 			$("#ingredients-input").val().split("+"));

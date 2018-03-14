@@ -37,9 +37,11 @@ $(() => {
 	}
 
 	// Add a Dish form handler
-	$("form").on("submit", (event) => {
+	$("#add-dish").on("submit", (event) => {
 		event.preventDefault();
-		
+
+		/* this is a mess of turnary operators that shouldn't exist yet im
+		also kinda proud of it */
 		let menu = ($("#main-button").prop("checked")) ? "main" : 
 			($("#starters-button").prop("checked")) ? "starters" : 
 			($("#desserts-button").prop("checked")) ? "desserts" : "drinks";
@@ -55,6 +57,7 @@ $(() => {
 	new Dish("drinks", "coke", 1.50, ["coke", "ice"]);
 	new Dish("starters", "kimchi fries", 3, ["kimchi", "fries"]);
 	new Dish("main", "hamburger", 5.50, ["beef", "buns", "lettuce", "tomato"]);
+	new Dish("drinks", "coffee", .75, ["ground coffee beans", "water"]);
 
 	Menu.display();
 });

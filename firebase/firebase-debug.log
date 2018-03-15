@@ -1,143 +1,41 @@
-[debug] [2018-03-14T23:16:06.936Z] ----------------------------------------------------------------------
-[debug] [2018-03-14T23:16:06.936Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-03-14T23:16:06.936Z] CLI Version:   3.17.6
-[debug] [2018-03-14T23:16:06.936Z] Platform:      win32
-[debug] [2018-03-14T23:16:06.936Z] Node Version:  v8.9.3
-[debug] [2018-03-14T23:16:06.936Z] Time:          Wed Mar 14 2018 18:16:06 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:16:06.936Z] ----------------------------------------------------------------------
+[debug] [2018-03-15T20:47:55.478Z] ----------------------------------------------------------------------
+[debug] [2018-03-15T20:47:55.478Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-15T20:47:55.478Z] CLI Version:   3.17.6
+[debug] [2018-03-15T20:47:55.478Z] Platform:      win32
+[debug] [2018-03-15T20:47:55.478Z] Node Version:  v8.9.3
+[debug] [2018-03-15T20:47:55.478Z] Time:          Thu Mar 15 2018 15:47:55 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:55.478Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-03-14T23:16:06.983Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-14T23:16:06.983Z] > authorizing via signed-in user
-[debug] [2018-03-14T23:16:06.983Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
+[debug] [2018-03-15T20:47:55.618Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-15T20:47:55.634Z] > authorizing via signed-in user
+[debug] [2018-03-15T20:47:55.634Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-15T20:47:55.634Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/zarbszTgRWBNuuXKRMIqu1DsSVXaU8FttQR6Il9D8r8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Mar 15 2018 15:47:55 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:56.009Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-15T20:47:56.040Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
   
- Wed Mar 14 2018 18:16:06 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:16:07.467Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:16:07.467Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
+ Thu Mar 15 2018 15:47:56 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:56.458Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-15T20:47:56.458Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
   
- Wed Mar 14 2018 18:16:07 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:16:09.233Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:16:09.233Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
+ Thu Mar 15 2018 15:47:56 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:56.864Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-15T20:47:56.864Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
   
- Wed Mar 14 2018 18:16:09 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:16:09.405Z] <<< HTTP RESPONSE 200
+ Thu Mar 15 2018 15:47:56 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:57.192Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Sam\code\github-repositories\online-ordering\firebase'...
 [info] 
-[debug] [2018-03-14T23:16:09.421Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
+[debug] [2018-03-15T20:47:57.224Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
   
- Wed Mar 14 2018 18:16:09 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:16:09.749Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:16:09.811Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:18)
-    at Object.onceWrapper (events.js:313:30)
-    at emitNone (events.js:106:13)
-    at Server.emit (events.js:208:7)
-    at emitListeningNT (net.js:1378:10)
-    at _combinedTickCallback (internal/process/next_tick.js:135:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2018-03-14T23:17:10.001Z] ----------------------------------------------------------------------
-[debug] [2018-03-14T23:17:10.016Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-03-14T23:17:10.016Z] CLI Version:   3.17.6
-[debug] [2018-03-14T23:17:10.016Z] Platform:      win32
-[debug] [2018-03-14T23:17:10.016Z] Node Version:  v8.9.3
-[debug] [2018-03-14T23:17:10.016Z] Time:          Wed Mar 14 2018 18:17:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:10.016Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-03-14T23:17:10.048Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-14T23:17:10.048Z] > authorizing via signed-in user
-[debug] [2018-03-14T23:17:10.063Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:17:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:10.501Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:17:10.501Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
-  
- Wed Mar 14 2018 18:17:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:10.954Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:17:10.954Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:17:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:11.157Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Sam\code\github-repositories\online-ordering\firebase'...
-[info] 
-[debug] [2018-03-14T23:17:11.157Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
-  
- Wed Mar 14 2018 18:17:11 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:11.579Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:17:11.641Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:18)
-    at Object.onceWrapper (events.js:313:30)
-    at emitNone (events.js:106:13)
-    at Server.emit (events.js:208:7)
-    at emitListeningNT (net.js:1378:10)
-    at _combinedTickCallback (internal/process/next_tick.js:135:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2018-03-14T23:17:55.271Z] ----------------------------------------------------------------------
-[debug] [2018-03-14T23:17:55.271Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-03-14T23:17:55.271Z] CLI Version:   3.17.6
-[debug] [2018-03-14T23:17:55.271Z] Platform:      win32
-[debug] [2018-03-14T23:17:55.271Z] Node Version:  v8.9.3
-[debug] [2018-03-14T23:17:55.271Z] Time:          Wed Mar 14 2018 18:17:55 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:55.271Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-03-14T23:17:55.318Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-14T23:17:55.318Z] > authorizing via signed-in user
-[debug] [2018-03-14T23:17:55.318Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:17:55 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:55.880Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:17:55.880Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
-  
- Wed Mar 14 2018 18:17:55 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:56.287Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:17:56.302Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:17:56 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:56.455Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Sam\code\github-repositories\online-ordering\firebase'...
-[info] 
-[debug] [2018-03-14T23:17:56.455Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
-  
- Wed Mar 14 2018 18:17:56 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:17:56.798Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ..
-[info] +  hosting: Local server: http://localhost:5000
-
-[info] Shutting down...
-[debug] [2018-03-14T23:25:09.207Z] ----------------------------------------------------------------------
-[debug] [2018-03-14T23:25:09.207Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sam\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-03-14T23:25:09.222Z] CLI Version:   3.17.6
-[debug] [2018-03-14T23:25:09.222Z] Platform:      win32
-[debug] [2018-03-14T23:25:09.222Z] Node Version:  v8.9.3
-[debug] [2018-03-14T23:25:09.222Z] Time:          Wed Mar 14 2018 18:25:09 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:25:09.222Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-03-14T23:25:09.254Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-14T23:25:09.254Z] > authorizing via signed-in user
-[debug] [2018-03-14T23:25:09.269Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:25:09 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:25:09.691Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:25:09.691Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
-  
- Wed Mar 14 2018 18:25:09 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:25:10.145Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-14T23:25:10.145Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
-  
- Wed Mar 14 2018 18:25:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:25:10.301Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Sam\code\github-repositories\online-ordering\firebase'...
-[info] 
-[debug] [2018-03-14T23:25:10.316Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
-  
- Wed Mar 14 2018 18:25:10 GMT-0500 (Central Daylight Time)
-[debug] [2018-03-14T23:25:10.676Z] <<< HTTP RESPONSE 200
+ Thu Mar 15 2018 15:47:57 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-15T20:47:57.608Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ..
 [info] +  hosting: Local server: http://localhost:5000
 

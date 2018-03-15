@@ -1,0 +1,32 @@
+[debug] [2018-03-14T23:27:30.842Z] ----------------------------------------------------------------------
+[debug] [2018-03-14T23:27:30.844Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KT\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-14T23:27:30.844Z] CLI Version:   3.17.5
+[debug] [2018-03-14T23:27:30.845Z] Platform:      win32
+[debug] [2018-03-14T23:27:30.845Z] Node Version:  v8.9.3
+[debug] [2018-03-14T23:27:30.845Z] Time:          Wed Mar 14 2018 18:27:30 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-14T23:27:30.845Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-14T23:27:30.855Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-14T23:27:30.856Z] > authorizing via signed-in user
+[debug] [2018-03-14T23:27:30.858Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chi-lantro-delivery-platform  
+  
+ Wed Mar 14 2018 18:27:30 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-14T23:27:31.257Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-14T23:27:31.258Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chi-lantro-delivery-platform/tokens  
+  
+ Wed Mar 14 2018 18:27:31 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-14T23:27:31.559Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-14T23:27:31.560Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chi-lantro-delivery-platform  
+  
+ Wed Mar 14 2018 18:27:31 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-14T23:27:31.701Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\KT\desktop\ut\proj-1\online-ordering\firebase'...
+[info] 
+[debug] [2018-03-14T23:27:31.708Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/356504711264/clients/_:getWebAppConfig  
+  
+ Wed Mar 14 2018 18:27:31 GMT-0500 (Central Daylight Time)
+[debug] [2018-03-14T23:27:32.011Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ..
+[info] +  hosting: Local server: http://localhost:5000
+

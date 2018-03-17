@@ -1,11 +1,10 @@
- 
-var config = {
-    apiKey: "AIzaSyCIVlT1DRkM-pfQbEVuVp-zXPQAw2-wYas",
-    authDomain: "chi-lantro-delivery-platform.firebaseapp.com",
-    databaseURL: "https://chi-lantro-delivery-platform.firebaseio.com",
-    projectId: "chi-lantro-delivery-platform",
-    storageBucket: "chi-lantro-delivery-platform.appspot.com",
-    messagingSenderId: "356504711264"
+ var config = {
+    apiKey: "AIzaSyAXgGKvPTXo6A8P-xYsolAdOuMNL3ouuV0",
+    authDomain: "healthy-gorilla.firebaseapp.com",
+    databaseURL: "https://healthy-gorilla.firebaseio.com",
+    projectId: "healthy-gorilla",
+    storageBucket: "healthy-gorilla.appspot.com",
+    messagingSenderId: "394761604278"
   };
   firebase.initializeApp(config);
 
@@ -122,15 +121,6 @@ $("#register-btn").on("click", function(){
 		   console.log(error.message);
 		});
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-		console.log("The UID is: " + userId);
-
-=======
->>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
-=======
-
->>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
 		isLoggedIn();
 	});
 
@@ -232,6 +222,11 @@ hideForm();
 
 
 
+// -------------------------------------------------------------------------
+// OLD MODAL
+
+
+
 
  
 $(function() {
@@ -323,8 +318,33 @@ $(function() {
 
 
 //---------------------------------------------------------------------------//
+// NEW MODAL
 
-//  
+// $(document).ready(function() {
+//   var panelOne = $('.form-panel.two').height(),
+//     panelTwo = $('.form-panel.two')[0].scrollHeight;
+
+//   $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
+//     e.preventDefault();
+
+//     $('.form-toggle').addClass('visible');
+//     $('.form-panel.one').addClass('hidden');
+//     $('.form-panel.two').addClass('active');
+//     $('.form').animate({
+//       'height': panelTwo
+//     }, 200);
+//   });
+
+//   $('.form-toggle').on('click', function(e) {
+//     e.preventDefault();
+//     $(this).removeClass('visible');
+//     $('.form-panel.one').removeClass('hidden');
+//     $('.form-panel.two').removeClass('active');
+//     $('.form').animate({
+//       'height': panelOne
+//     }, 200);
+//   });
+// });
 
 
 //---------------------------------------------------------------------------//

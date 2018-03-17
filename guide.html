@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chi'Lantro delivery</title>
+	<!-- bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- index.css stylesheet -->
+	<link rel="stylesheet" href="./assets/css/index.css" type="text/css">
+
+	<!-- firebase scripts -->
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-database.js"></script>
+	<!-- <script src="./assets/js/auth.js "></script> -->
+
+</head>
+
+<body>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- bootstrap .js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- index.js -->
+	<!-- <script src="./assets/js/index.js"></script> -->
+
+		<script type = "text/javascript">
+		
+		var queryURL = "https://www.vegguide.org/search/by-lat-long/30.266926,-97.750519"
+		
+		$.ajaxSetup({
+		  beforeSend: function(request) {
+		    request.setRequestHeader("User-Agent","greenapp/v1.0");
+		  }
+		});
+		
+		
+		$.ajax({
+		  type: "GET",
+		  url: queryURL,
+		  success: function(res) {
+		  	var cuisines = [];
+		  	for (x in res.entries) {
+				console.log(res.entries[x].cuisines);
+					for (j in res.entries[x].cuisines){
+						// console.log(res.entries[x].cuisines[j]);
+						cuisines.push(res.entries[x].cuisines[j]);
+						console.log(cuisines)
+					}
+					cuisines = $.unique(cuisines);
+			}
+
+		   // console.log(res);
+		  console.log('FINAL: ', cuisines);
+		 
+		  }
+		});
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+		
+
+
+=======
+		
+>>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
+=======
+
+>>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
+		</script>
+	
+</body>
+
+</html>

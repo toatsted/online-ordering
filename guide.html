@@ -27,12 +27,16 @@
 	<!-- <script src="./assets/js/index.js"></script> -->
 
 		<script type = "text/javascript">
+
 		var queryURL = "https://www.vegguide.org/search/by-lat-long/30.266926,-97.750519"
+
 		$.ajaxSetup({
 		  beforeSend: function(request) {
 		    request.setRequestHeader("User-Agent","greenapp/v1.0");
 		  }
 		});
+
+
 		$.ajax({
 		  type: "GET",
 		  url: queryURL,
@@ -45,3 +49,4 @@
 </body>
 
 </html>
+

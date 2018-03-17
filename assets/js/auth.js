@@ -122,6 +122,7 @@ $("#register-btn").on("click", function(){
 		   console.log(error.message);
 		});
 
+
 		isLoggedIn();
 	});
 

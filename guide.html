@@ -41,9 +41,25 @@
 		  type: "GET",
 		  url: queryURL,
 		  success: function(res) {
-		   console.log(res);
+		  	var cuisines = [];
+		  	for (x in res.entries) {
+				console.log(res.entries[x].cuisines);
+					for (j in res.entries[x].cuisines){
+						// console.log(res.entries[x].cuisines[j]);
+						cuisines.push(res.entries[x].cuisines[j]);
+						console.log(cuisines)
+					}
+					cuisines = $.unique(cuisines);
+			}
+
+		   // console.log(res);
+		  console.log('FINAL: ', cuisines);
+		 
 		  }
 		});
+
+		
+
 
 		</script>
 	

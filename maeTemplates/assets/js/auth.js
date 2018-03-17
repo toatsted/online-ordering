@@ -122,8 +122,6 @@ $("#register-btn").on("click", function(){
 		   console.log(error.message);
 		});
 
-		console.log("The UID is: " + userId);
-
 		isLoggedIn();
 	});
 

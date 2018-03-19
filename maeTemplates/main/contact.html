@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../assetsMaterialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../assets/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    h1,
+    h5 {
+      font-family: 'Cookie', cursive;
+    }
+
+    h5 {
+      font-size: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="https://placeholder.com" class="brand-logo">
+        <img class="materialboxed" src="http://via.placeholder.com/150x75">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <!-- have target "scroll" down to the About section on the page -->
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="search.html">Search</a>
+        </li>
+        <li>
+          <a href="#" target="_top">Contact Us</a>
+        </li>
+        <li>
+          <a href="account.html">My Favorites</a>
+        </li>
+        <li>
+          <!-- Modal Trigger, the 'href' points to the Modal Structure -->
+          <a class="waves-effect waves-light orange darken-4 btn modal-trigger" href="#login-modal">Sign In</a>
+          <!-- Modal Structure -->
+          <div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header" align="center">
+                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                              
+                              <!-- Begin # DIV Form -->
+                              <div id="div-forms">
+                              
+                                  <!-- Begin # Login Form -->
+                                  <form id="login-form">
+                                  <div class="modal-body">
+                              <div id="div-login-msg">
+                                              <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-login-msg">Type your email and password.</span>
+                                          </div>
+                              <input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
+                              <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                                        
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button id = "login-btn" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                          </div>
+                                <div>
+                                              <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End # Login Form -->
+                                  
+                                  <!-- Begin | Lost Password Form -->
+                                  <form id="lost-form" style="display:none;">
+                                <div class="modal-body">
+                              <div id="div-lost-msg">
+                                              <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-lost-msg">Type your e-mail.</span>
+                                          </div>
+                              <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                                          </div>
+                                          <div>
+                                              <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                              <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End | Lost Password Form -->
+                                  
+                                  <!-- Begin | Register Form -->
+                                  <form id="register-form" style="display:none;">
+                                  <div class="modal-body">
+                              <div id="div-register-msg">
+                                              <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-register-msg">Register an account.</span>
+                                          </div>
+                              <!-- <input id="register_name" class="form-control" type="text" placeholder="Name" required> -->
+                                          <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                                          <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button id = "register-btn" type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                                          </div>
+                                          <div>
+                                              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End | Register Form -->
+                                  
+                              </div>
+                              <!-- End # DIV Form -->
+                              
+                    </div>
+                  </div>
+                </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Itaque earum rerum hic tenetur a sapiente delectus.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="../assetsMaterialize/background3.jpg" alt="Unsplashed background img 3">
+    </div>
+  </div>
+
+  <footer class="page-footer orange darken-4">
+    <div class="footer-copyright">
+      <div class="container center-align">
+        Lorem Ipsum
+        <a class="brown-text text-lighten-3">Group 1</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../assetsMaterialize/js/materialize.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+
+</html>

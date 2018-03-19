@@ -111,3 +111,19 @@ float: left;
   float: left;
   margin-right: 5px;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    /* max-height: 70%; */
+    max-height: 50%;
+    width: 55%;
+    margin: auto;
+    overflow-y: hidden !important;
+    border-radius: 2px;
+    will-change: top, opacity;
+}

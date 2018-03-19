@@ -28,7 +28,7 @@
 
 		<script type = "text/javascript">
 		
-		var queryURL = "https://www.vegguide.org/search/by-lat-long/30.266926,-97.750519"
+		var queryURL = "https://www.vegguide.org/search/by-lat-long/30.2672,-97.7431/filter/category_id=1;veg_level=2"
 		
 		$.ajaxSetup({
 		  beforeSend: function(request) {
@@ -41,34 +41,45 @@
 		  type: "GET",
 		  url: queryURL,
 		  success: function(res) {
+		  	console.log(res);
 		  	var cuisines = [];
-		  	for (x in res.entries) {
-				console.log(res.entries[x].cuisines);
-					for (j in res.entries[x].cuisines){
-						// console.log(res.entries[x].cuisines[j]);
-						cuisines.push(res.entries[x].cuisines[j]);
-						console.log(cuisines)
+		  	for (i in res.entries) {
+				// console.log(res.entries[i].cuisines);
+					for (j in res.entries[i].cuisines){
+						// console.log(res.entries[i].cuisines[j]);
+						cuisines.push(res.entries[i].cuisines[j]);
+						// console.log(cuisines)
 					}
 					cuisines = $.unique(cuisines);
 			}
 
+			var restaurants = [];
+			for (r in res.entries){
+				for(c in cuisines){
+					if(!(cuisines[c] in restaurants)){
+						restaurants[cuisines[c]] = [];
+					}
+
+					if(res.entries[r].cuisines.includes(cuisines[c])){
+						restaurants[cuisines[c]].push(res.entries[r]);
+						// restaurants[cuisines[c]].push(r);
+					}
+					else{
+						// console.log(res.entries[r].cuisines, c);
+					}
+				} 
+			}
+
+			
+				console.log(restaurants);
+			
 		   // console.log(res);
-		  console.log('FINAL: ', cuisines);
+		console.log('FINAL: ', cuisines);
 		 
 		  }
 		});
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-		
 
 
-=======
-		
->>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
-=======
-
->>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
 		</script>
 	
 </body>

@@ -6,8 +6,6 @@
 	<title>Chi'Lantro delivery</title>
 	<!-- bootstrap stylesheet -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<!-- index.css stylesheet -->
-	<link rel="stylesheet" href="./assets/css/index.css" type="text/css">
 
 	<!-- firebase scripts -->
 	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
@@ -17,6 +15,9 @@
 </head>
 
 <body>
+	<div class="container">
+		
+	</div>
 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,61 +27,7 @@
 	<!-- index.js -->
 	<!-- <script src="./assets/js/index.js"></script> -->
 
-		<script type = "text/javascript">
-		
-		var queryURL = "https://www.vegguide.org/search/by-lat-long/30.2672,-97.7431/filter/category_id=1;veg_level=2"
-		
-		$.ajaxSetup({
-		  beforeSend: function(request) {
-		    request.setRequestHeader("User-Agent","greenapp/v1.0");
-		  }
-		});
-		
-		
-		$.ajax({
-		  type: "GET",
-		  url: queryURL,
-		  success: function(res) {
-		  	console.log(res);
-		  	var cuisines = [];
-		  	for (i in res.entries) {
-				// console.log(res.entries[i].cuisines);
-					for (j in res.entries[i].cuisines){
-						// console.log(res.entries[i].cuisines[j]);
-						cuisines.push(res.entries[i].cuisines[j]);
-						// console.log(cuisines)
-					}
-					cuisines = $.unique(cuisines);
-			}
 
-			var restaurants = [];
-			for (r in res.entries){
-				for(c in cuisines){
-					if(!(cuisines[c] in restaurants)){
-						restaurants[cuisines[c]] = [];
-					}
-
-					if(res.entries[r].cuisines.includes(cuisines[c])){
-						restaurants[cuisines[c]].push(res.entries[r]);
-						// restaurants[cuisines[c]].push(r);
-					}
-					else{
-						// console.log(res.entries[r].cuisines, c);
-					}
-				} 
-			}
-
-			
-				console.log(restaurants);
-			
-		console.log('FINAL: ', cuisines);
-		 
-		  }
-		});
-
-
-		</script>
-	
+	<script src="./assets/js/guide.js"></script>
 </body>
-
 </html>

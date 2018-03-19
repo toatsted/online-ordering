@@ -122,6 +122,15 @@ $("#register-btn").on("click", function(){
 		   console.log(error.message);
 		});
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+		console.log("The UID is: " + userId);
+
+=======
+>>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
+=======
+
+>>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
 		isLoggedIn();
 	});
 

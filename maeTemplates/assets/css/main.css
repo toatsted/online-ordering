@@ -1,4 +1,4 @@
-/* 
+ 
 
  * Use this file to override Materialize files so you can update
 
@@ -72,4 +72,47 @@ footer.page-footer {
   #index-banner .section {
     top: 0;
   }
+}
+
+.modal-body{
+  color: black;
+}
+
+.btn{
+  background-color: #1B5E20;
+}
+
+.btn:hover, .btn-large:hover{
+  background-color: #1B5E20;
+}
+
+.btn:focus, .btn-large:focus,
+.btn-floating:focus {
+  background-color: #1B5E20;
+}
+
+#login_register_btn{
+  float: left;
+  margin-left: 5px;
+
+}
+
+#login_lost_btn{
+  float: left;
+
+}
+
+#login-btn{
+  float: left;
+  margin-right: 5px;
+
+}
+
+#register_login_btn{
+float: left;
+}
+
+#register-btn{
+  float: left;
+  margin-right: 5px;
 }

@@ -41,10 +41,34 @@
 		  type: "GET",
 		  url: queryURL,
 		  success: function(res) {
-		   console.log(res);
+		  	var cuisines = [];
+		  	for (x in res.entries) {
+				console.log(res.entries[x].cuisines);
+					for (j in res.entries[x].cuisines){
+						// console.log(res.entries[x].cuisines[j]);
+						cuisines.push(res.entries[x].cuisines[j]);
+						console.log(cuisines)
+					}
+					cuisines = $.unique(cuisines);
+			}
+
+		   // console.log(res);
+		  console.log('FINAL: ', cuisines);
+		 
 		  }
 		});
+<<<<<<< HEAD
+<<<<<<< HEAD
+
 		
+
+
+=======
+		
+>>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
+=======
+
+>>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
 		</script>
 	
 </body>

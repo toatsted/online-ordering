@@ -1,0 +1,113 @@
+ 
+
+ * Use this file to override Materialize files so you can update
+
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.materialboxed {
+  width: 30%;
+    margin: auto;
+    float: left;
+}
+.brand-logo{
+  width:30%;
+}
+.carousel .carousel-item {
+  width: 300px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.modal-body{
+  color: black;
+}
+
+.btn{
+  background-color: #1B5E20;
+}
+
+.btn:hover, .btn-large:hover{
+  background-color: #1B5E20;
+}
+
+.btn:focus, .btn-large:focus,
+.btn-floating:focus {
+  background-color: #1B5E20;
+}
+
+#login_register_btn{
+  float: left;
+  margin-left: 5px;
+
+}
+
+#login_lost_btn{
+  float: left;
+
+}
+
+#login-btn{
+  float: left;
+  margin-right: 5px;
+
+}
+
+#register_login_btn{
+float: left;
+}
+
+#register-btn{
+  float: left;
+  margin-right: 5px;
+}

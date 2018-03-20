@@ -15,6 +15,7 @@
  var ref = firebase.database().ref();
  var userId = JSON.parse(localStorage.getItem("UID"));
  console.log("The UID is: " + userId);
+ console.log(ref);
 
 
 
@@ -54,6 +55,8 @@ function hideForm(){
 function showForm(){
 	$("#update_account").show();
 }
+
+
 
 
 var refId = firebase.database().ref("users/" + userId);
@@ -121,6 +124,8 @@ $("#register-btn").on("click", function(){
 		   console.log(error.message);
 		});
 
+		 // $('#login-modal').modal('close');
+
 		isLoggedIn();
 	});
 
@@ -128,20 +133,27 @@ $("#register-btn").on("click", function(){
 $("#login-btn").on("click", function(){
 		var email = $("#login_email").val().trim();
 		var password = $("#login_password").val().trim();
-
 		var user = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 		   if(error.code == "auth/invalid-email"){
+		   	$('#login-modal').modal('open');
 		   	alert("Incorrect email format.");
-		   }
-		   if(error.code == "auth/user-not-found"){
-		   	alert("Invalid email or password");
-		   }
 		   console.log(error.code);
 		   console.log(error.message);
-		});
-
-			//console.clear();
+		   return;
+		   }
+		   if(error.code == "auth/user-not-found"){
+		   	$('#login-modal').modal('open');
+		   	alert("Invalid email or password");
+		   console.log(error.code);
+		   console.log(error.message);
+		   return;
+		   }else{
+		   	$('#login-modal').modal('close');
    			console.log(user);
+		   }
+		   
+		});
+	
 });
 
 $("#logout-btn").on("click", function(){
@@ -189,21 +201,23 @@ firebase.auth().onAuthStateChanged(function(user) {
 }
 
 
-$('#login-btn').on("click", function(e) {
-    e.preventDefault();
-    console.log("HELLO");
-    // Coding
-    $('#login-modal').modal('toggle'); //or  $('#IDModal').modal('hide');
-    return false;
-});
+// $('#login-btn').on("click", function(e) {
+//     e.preventDefault();
+//     console.log("HELLO");
+//     // Coding
+//     $('#login-modal').modal('close'); //or  $('#IDModal').modal('hide');
+//     return false;
+// });
 
-$('#register-btn').on("click", function(e) {
-    e.preventDefault();
-    console.log("HELLO AGAIN");
-    // Coding
-    $('#login-modal').modal('toggle'); //or  $('#IDModal').modal('hide');
-    return false;
-});
+// $('#register-btn').on("click", function(e) {
+//     e.preventDefault();
+//     console.log("HELLO AGAIN");
+//     // Coding
+//     $('#login-modal').modal('close'); //or  $('#IDModal').modal('hide');
+//     return false;
+// });
+
+
 
 function updateButton(){
 	if(userId === null){

@@ -1,118 +1,114 @@
- 
+ * Use this file to override Materialize files so you can update */ nav ul a,
+ nav .brand-logo {
+   color: #444;
+ }
 
- * Use this file to override Materialize files so you can update
+ p {
+   line-height: 2rem;
+ }
 
- */
+ .button-collapse {
+   color: #26a69a;
+ }
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
+ .parallax-container {
+   min-height: 380px;
+   line-height: 0;
+   height: auto;
+   color: rgba(255, 255, 255, .9);
+   overflow: visible;
+ }
 
-p {
-  line-height: 2rem;
-}
+ .parallax-container .section {
+   width: 100%;
+ }
 
-.button-collapse {
-  color: #26a69a;
-}
+ .icon-block {
+   padding: 0 15px;
+ }
 
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255, 255, 255, .9);
-  overflow: visible;
-}
+ .icon-block .material-icons {
+   font-size: inherit;
+ }
 
-.parallax-container .section {
-  width: 100%;
-}
+ footer.page-footer {
+   margin: 0;
+ }
 
-.icon-block {
-  padding: 0 15px;
-}
+ .materialboxed {
+   width: 30%;
+   margin: auto;
+   float: left;
+ }
 
-.icon-block .material-icons {
-  font-size: inherit;
-}
+ .brand-logo {
+   width: 30%;
+ }
 
-footer.page-footer {
-  margin: 0;
-}
+ .carousel {
+   overflow: visible;
+ }
 
-.materialboxed {
-  width: 30%;
-    margin: auto;
-    float: left;
-}
-.brand-logo{
-  width:30%;
-}
+ .carousel .carousel-item {
+   width: 300px;
+   height: 300px;
+ }
 
-.carousel {
-  overflow: visible;
-}
-.carousel .carousel-item {
-  width: 300px;
-  height: 300px;
-}
 
-@media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
+ .modal-body {
+   color: black;
+ }
 
-@media only screen and (max-width: 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
+ .btn {
+   background-color: #1B5E20;
+ }
 
-.modal-body{
-  color: black;
-}
+ .btn:hover,
+ .btn-large:hover {
+   background-color: #1B5E20;
+ }
 
-.btn{
-  background-color: #1B5E20;
-}
+ .btn:focus,
+ .btn-large:focus,
+ .btn-floating:focus {
+   background-color: #1B5E20;
+ }
 
-.btn:hover, .btn-large:hover{
-  background-color: #1B5E20;
-}
+ #login_register_btn {
+   float: left;
+   margin-left: 5px;
+ }
 
-.btn:focus, .btn-large:focus,
-.btn-floating:focus {
-  background-color: #1B5E20;
-}
+ #login_lost_btn {
+   float: left;
+ }
 
-#login_register_btn{
-  float: left;
-  margin-left: 5px;
+ #login-btn {
+   float: left;
+   margin-right: 5px;
+ }
 
-}
+ #register_login_btn {
+   float: left;
+ }
 
-#login_lost_btn{
-  float: left;
+ #register-btn {
+   float: left;
+   margin-right: 5px;
+ }
 
-}
+ @media only screen and (max-width: 992px) {
+   .parallax-container .section {
+     position: absolute;
+     top: 40%;
+   }
+   #index-banner .section {
+     top: 10%;
+   }
+ }
 
-#login-btn{
-  float: left;
-  margin-right: 5px;
-
-}
-
-#register_login_btn{
-float: left;
-}
-
-#register-btn{
-  float: left;
-  margin-right: 5px;
-}
+ @media only screen and (max-width: 600px) {
+   #index-banner .section {
+     top: 0;
+   }
+ }

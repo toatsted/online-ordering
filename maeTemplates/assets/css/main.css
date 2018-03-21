@@ -270,7 +270,7 @@ textarea{
   }
 }
 @media screen and (min-width:0) and (max-width:839px){
-  .hide-small{
+  .js-modal-visible{
       display:none!important
   }
 }

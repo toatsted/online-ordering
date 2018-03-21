@@ -132,3 +132,8 @@ float: left;
     border-radius: 2px;
     will-change: top, opacity;
 }
+
+.modal .modal-content {
+    padding: 24px;
+    margin-bottom: 69px;
+}

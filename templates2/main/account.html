@@ -1,176 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-touch js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-lato-i4-active wf-lato-n7-active wf-lato-i3-active wf-lato-n4-active wf-lato-n3-active wf-opensanscondensed-n7-active wf-lato-n8-active wf-active"
+  style="">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Account</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../../maeTemplates/assetsMaterialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="../assets/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <style>
-    h1,
-    h5 {
-      font-family: 'Cookie', cursive;
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Gorilla | Online Ordering | HG</title>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="../../maeTemplates/assets/css/main.css">
+  <link rel="stylesheet" href="../../maeTemplates/assets/css/home.css">
+  <style type="text/css">
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/7e2520/00000000000000000001522d/27/l?subset_id=2&fvd=i4&v=3) format("woff2"), url(https://use.typekit.net/af/7e2520/00000000000000000001522d/27/d?subset_id=2&fvd=i4&v=3) format("woff"), url(https://use.typekit.net/af/7e2520/00000000000000000001522d/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
+      font-weight: 400;
+      font-style: italic;
     }
 
-    h5 {
-      font-size: 32px;
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/10aeb0/000000000000000000015231/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/10aeb0/000000000000000000015231/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/10aeb0/000000000000000000015231/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+      font-weight: 700;
+      font-style: normal;
+    }
 
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/1c664b/00000000000000000001522b/27/l?subset_id=2&fvd=i3&v=3) format("woff2"), url(https://use.typekit.net/af/1c664b/00000000000000000001522b/27/d?subset_id=2&fvd=i3&v=3) format("woff"), url(https://use.typekit.net/af/1c664b/00000000000000000001522b/27/a?subset_id=2&fvd=i3&v=3) format("opentype");
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/02671f/00000000000000000001522c/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/02671f/00000000000000000001522c/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/02671f/00000000000000000001522c/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/0a97db/00000000000000000001522a/27/l?subset_id=2&fvd=n3&v=3) format("woff2"), url(https://use.typekit.net/af/0a97db/00000000000000000001522a/27/d?subset_id=2&fvd=n3&v=3) format("woff"), url(https://use.typekit.net/af/0a97db/00000000000000000001522a/27/a?subset_id=2&fvd=n3&v=3) format("opentype");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: lato;
+      src: url(https://use.typekit.net/af/c00391/000000000000000000015233/27/l?subset_id=2&fvd=n8&v=3) format("woff2"), url(https://use.typekit.net/af/c00391/000000000000000000015233/27/d?subset_id=2&fvd=n8&v=3) format("woff"), url(https://use.typekit.net/af/c00391/000000000000000000015233/27/a?subset_id=2&fvd=n8&v=3) format("opentype");
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: open-sans-condensed;
+      src: url(https://use.typekit.net/af/8b0bc0/000000000000000000012518/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/8b0bc0/000000000000000000012518/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/8b0bc0/000000000000000000012518/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+      font-weight: 700;
+      font-style: normal;
     }
   </style>
 </head>
 
-<body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a href="https://placeholder.com" class="brand-logo">
-        <img class="materialboxed" src="http://via.placeholder.com/150x75">
-      </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-          <!-- have target "scroll" down to the About section on the page -->
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="search.html">Search</a>
-        </li>
-        <li>
-          <a href="contact.html">Contact Us</a>
-        </li>
-        <li>
-          <a href="#" target="_top">My Favorites</a>
-        </li>
-        <li>
+<body class="page--index no-js">
+  <header>
+    <!-- Modal Trigger, the 'href' points to the Modal Structure -->
+    <a class="waves-effect waves-light green darken-4 btn modal-trigger" data-toggle="modal" href="#login-modal">Sign In</a>
+    <!-- Modal Structure -->
 
+    <div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+      style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
 
-          <!-- Modal Trigger, the 'href' points to the Modal Structure -->
-          <a class="waves-effect waves-light orange darken-4 btn modal-trigger" href="#login-modal">Sign In</a>
-          <!-- Modal Structure -->
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
 
-
-
-               <div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header" align="center">
-                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                      </div>
-                              
-                              <!-- Begin # DIV Form -->
-                              <div id="div-forms">
-                              
-                                  <!-- Begin # Login Form -->
-                                  <form id="login-form">
-                                  <div class="modal-body">
-                              <div id="div-login-msg">
-                                              <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                              <span id="text-login-msg">Type your email and password.</span>
-                                          </div>
-                              <input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
-                              <input id="login_password" class="form-control" type="password" placeholder="Password" required>
-                                        
-                                </div>
-                              <div class="modal-footer">
-                                          <div>
-                                              <button id = "login-btn" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                                          </div>
-                                <div>
-                                              <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-                                          </div>
-                              </div>
-                                  </form>
-                                  <!-- End # Login Form -->
-                                  
-                                  <!-- Begin | Lost Password Form -->
-                                  <form id="lost-form" style="display:none;">
-                                <div class="modal-body">
-                              <div id="div-lost-msg">
-                                              <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                              <span id="text-lost-msg">Type your e-mail.</span>
-                                          </div>
-                              <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
-                                </div>
-                              <div class="modal-footer">
-                                          <div>
-                                              <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
-                                          </div>
-                                          <div>
-                                              <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-                                              <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-                                          </div>
-                              </div>
-                                  </form>
-                                  <!-- End | Lost Password Form -->
-                                  
-                                  <!-- Begin | Register Form -->
-                                  <form id="register-form" style="display:none;">
-                                  <div class="modal-body">
-                              <div id="div-register-msg">
-                                              <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                              <span id="text-register-msg">Register an account.</span>
-                                          </div>
-                              <!-- <input id="register_name" class="form-control" type="text" placeholder="Name" required> -->
-                                          <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-                                          <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-                                </div>
-                              <div class="modal-footer">
-                                          <div>
-                                              <button id = "register-btn" type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
-                                          </div>
-                                          <div>
-                                              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-                                          </div>
-                              </div>
-                                  </form>
-                                  <!-- End | Register Form -->
-                                  
-                              </div>
-                              <!-- End # DIV Form -->
-                              
-                    </div>
-                  </div>
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+              <div class="modal-body">
+                <div id="div-login-msg">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Type your email and password.</span>
                 </div>
+                <input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
+                <input id="login_password" class="form-control" type="password" placeholder="Password" required>
 
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button id="login-btn" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                </div>
+                <div>
+                  <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                </div>
+              </div>
+            </form>
+            <!-- End # Login Form -->
 
-        </li>
-      </ul>
-    </div>
-  </nav>
+            <!-- Begin | Lost Password Form -->
+            <form id="lost-form" style="display:none;">
+              <div class="modal-body">
+                <div id="div-lost-msg">
+                  <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-lost-msg">Type your e-mail.</span>
+                </div>
+                <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                </div>
+                <div>
+                  <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                  <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                </div>
+              </div>
+            </form>
+            <!-- End | Lost Password Form -->
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Itaque earum rerum hic tenetur a sapiente delectus.</h5>
+            <!-- Begin | Register Form -->
+            <form id="register-form" style="display:none;">
+              <div class="modal-body">
+                <div id="div-register-msg">
+                  <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-register-msg">Register an account.</span>
+                </div>
+                <!-- <input id="register_name" class="form-control" type="text" placeholder="Name" required> -->
+                <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button id="register-btn" type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                </div>
+                <div>
+                  <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                </div>
+              </div>
+            </form>
+            <!-- End | Register Form -->
+
+          </div>
+          <!-- End # DIV Form -->
+
         </div>
       </div>
     </div>
-    <div class="parallax">
-      <img src="../assetsMaterialize/background3.jpg" alt="Unsplashed background img 3">
+  </header>
+
+  <div class="navigation">
+    <div class="navigation__container">
+      <ul id="nav-global-menu" class="navigation__list navigation__list--vertical">
+        <li class="navigation__item">
+          <a href="#" class="navigation__link menu__link js-scroll-link">Solutions</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link menu__link js-scroll-link">Customers</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link menu__link js-scroll-link">About</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link menu__link">Careers</a>
+        </li>
+      </ul>
+      <ul class="navigation__list navigation__list--horizontal">
+        <li class="navigation__item">
+          <a href="#" target="_blank" class="navigation__link">Customer Login
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 
-  <footer class="page-footer orange darken-4">
-    <div class="footer-copyright">
-      <div class="container center-align">
-        Lorem Ipsum
-        <a class="brown-text text-lighten-3">Group 1</a>
-      </div>
-    </div>
-  </footer>
+  <div id="mobile-nav-trigger" class="button--x mobile-nav-button">
+    <div class="button--x__line button--x__top"></div>
+    <div class="button--x__line button--x__mid"></div>
+    <div class="button--x__line button--x__bottom"></div>
+  </div>
 
-  <!--  Scripts-->
+  <div id="main">
+    <div class="main-container">
+      <div id="hero" class="hero hero--index">
+        <div class="container">
+          <h1>Healthy Gorilla</h1>
+          <h3>Delicous. Healthy. Delivered to You. </h3>
+          <a href="#" target="_blank" class="button button--about">Check it out</a>
+        </div>
+        <ul class="animated-dots">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div id="after-hero"></div>
+      <div id="solutions" class="panel panel--solutions">
+        <div class="solution solution--ordering">
+          <div class="solution__container">
+            <div class="solution__inner">
+              <svg class="solution__icon icon--cart">
+              </svg>
+              <h2 class="solution__header">Online Ordering</h2>
+              <p class="solution__body">Reliable, fast, and secure online ordering solutions from your favorite restaurants.</p>
+              <a href="#" class="button button--large button--solutions">Ordering Tour</a>
+            </div>
+          </div>
+        </div>
+        <div class="solution solution--delivery">
+          <div class="solution__container">
+            <div class="solution__inner">
+              <h2 class="solution__header">Delivery</h2>
+              <p class="solution__body">Get your favorite food delivered to you!
+              </p>
+              <a href="#" class="button button--large button--solutions">Delivery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="about-HG" class="panel panel--about">
+        <div class="container">
+          <div class="about__info">
+            <h4 class="tag tag--about-panel">About HG</h4>
+            <h3>Providing Healthier Options</h3>
+            <p>Our mission is to give customers healthier and faster food options from the restaurants they love.</p>
+            <a href="#" class="button button--about">Learn more</a>
+          </div>
+          <div id="#" class="about__images">
+            <img src="#" alt="" class="about__image about__image--1">
+            <img src="#" alt="" class="about__image about__image--2">
+            <img src="#" alt="" class="about__image about__image--3">
+            <div class="#"></div>
+            <div class="#"></div>
+          </div>
+        </div>
+        <ul id="stats" class="about__stats">
+          <li class="statistic">
+            <h2 class="statistic__number">
+              <span class="js-digit">200</span>
+            </h2>
+            <p class="statistic__body">restaurant brands</p>
+          </li>
+          <li class="statistic">
+            <h2 class="statistic__number">
+              <span class="js-digit">95</span> Million</h2>
+            <p class="statistic__body">hungry users</p>
+          </li>
+          <li class="statistic">
+            <h2 class="statistic__number">
+              <span class="js-digit">144</span>
+            </h2>
+            <p class="statistic__body">happy hours had</p>
+          </li>
+        </ul>
+      </div>
+      <footer id="footer-global" class="footer">
+        <div class="panel panel--learn-more">
+          <h3 class="learn-more__header">Interested in learning more?
+            <a href="#" data-modal="contact-modal" class="learn-more__link js-modal-trigger">
+              Get in touch.</a>
+          </h3>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <ul class="footer__navigation">
+              <li class="footer__item">
+                <a href="#" class="footer__item__link">FAQ</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__item__link">Careers</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" target="_blank" class="footer__item__link">Made in Austin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-background"></div>
+    </div>
+  </div>
+  
   <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../../maeTemplates/assetsMaterialize/js/materialize.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/auth.js"></script>
-
+  <script src="../../maeTemplates/assets/js/main.js"></script>
+  <script src="../../maeTemplates/assets/js/auth.js"></script>
+</body>
 </body>
 
 </html>

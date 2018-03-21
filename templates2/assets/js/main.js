@@ -27,8 +27,8 @@ $(document).ready(() => {
   });
 
   $("#sendMessage").on("click", function (e) {
-
-
   });
+
+  $(".button-collapse").sideNav();
 
 })  

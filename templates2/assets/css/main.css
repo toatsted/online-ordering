@@ -240,7 +240,7 @@
       -ms-flex-pack:center;
       justify-content:center;
       padding:40px;
-      border:2px dashed #26b3e2
+      border:2px dashed #188138
   }
 }
 .solution__inner *{
@@ -248,7 +248,7 @@
 }
 .solution__header{
   font-size:30px;
-  color:#26b3e2
+  color:#188138
 }
 @media screen and (min-width:840px){
   .solution__header{
@@ -483,8 +483,8 @@ footer{
    color: black;
  }
 
- .btn {
-   background-color: rgb(6, 34, 8);
+ .loginbtn {
+   background-color: #062605;
  }
 
  .btn:hover,
@@ -551,9 +551,7 @@ float: left;
      top: 10%;
    }
     /* This css is for the .main class */
-   .main-container #hero {
-     left:350px;
-   }
+
  }
 
  @media only screen and (max-width: 600px) {

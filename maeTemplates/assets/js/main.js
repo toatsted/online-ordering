@@ -8,23 +8,6 @@ olo.checkIfLarge = {
     }
 }
 
-<<<<<<< HEAD
-
-// Modal function
-
-$(document).ready(function () {
-  // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-  $('.modal').modal();
-});
-
-$(document).ready(function () {
-  $('.carousel').carousel();
-});
-
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});
-=======
 olo.headerColor = {
     init: function() {
         var header = $('header');
@@ -117,5 +100,4 @@ olo.modal = {
         }
     }
 };
->>>>>>> a10f81f43179cf35af650c42357f0e04b19aaef0
       

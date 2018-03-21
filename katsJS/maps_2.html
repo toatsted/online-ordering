@@ -46,64 +46,65 @@
 //---------------------CONVERT ZIP CODE TO LAT/LONG-------------------------------------------------- 
   function codeAddress() {
 
-  	var address = $("#address").val();
- 
+  	var address = document.getElementById('address').value;
+
 		geocoder.geocode( { 'address': address}, function(results, status) {
 		   if (status == 'OK') {
 		    lat = results[0].geometry.location.lat();
 		    lng = results[0].geometry.location.lng();
-		    var input = lat + "," + lng;
+		    var input = lat + ", " + lng;
 		    console.log(input);
+		    } else {
+		      alert('Geocode was not successful for the following reason: ' + status);
+		    }
+		});
 
-		var queryURL = "https://www.vegguide.org/search/by-lat-long/" + input + "/filter/category_id=1;veg_level=2";
+	var queryURL = "https://www.vegguide.org/search/by-lat-long/" + input + "/filter/category_id=1;veg_level=2";
 
-		$.ajaxSetup({
-		beforeSend: function(request) {
-				 request.setRequestHeader("User-Agent","greenapp/v1.0");
-				  }
-				});
 
-	    $.ajax({
-			  type: "GET",
-			  url: queryURL,
-			  success: function(res) {
-			  	console.log(res);
-			  	var cuisines = [];
-			  	for (i in res.entries) {
-					// console.log(res.entries[i].cuisines);
-						for (j in res.entries[i].cuisines){
-							// console.log(res.entries[i].cuisines[j]);
-							cuisines.push(res.entries[i].cuisines[j]);
-							// console.log(cuisines)
-						}
-						cuisines = $.unique(cuisines);
-				}
-
-				var restaurants = [];
-				for (r in res.entries){
-					for(c in cuisines){
-						if(!(cuisines[c] in restaurants)){
-							restaurants[cuisines[c]] = [];
-						}
-
-						if(res.entries[r].cuisines.includes(cuisines[c])){
-							restaurants[cuisines[c]].push(res.entries[r]);
-							// restaurants[cuisines[c]].push(r);
-						}
-						else{
-							// console.log(res.entries[r].cuisines, c);
-						}
-					} 
-				}
-				console.log(restaurants);
-				console.log('FINAL: ', cuisines);
-			 
+    $.ajaxSetup({
+	beforeSend: function(request) {
+			 request.setRequestHeader("User-Agent","greenapp/v1.0");
 			  }
 			});
-			    } else {
-			      alert('Geocode was not successful for the following reason: ' + status);
-			    }
-			});    
+
+    $.ajax({
+		  type: "GET",
+		  url: queryURL,
+		  success: function(res) {
+		  	console.log(res);
+		  	var cuisines = [];
+		  	for (i in res.entries) {
+				// console.log(res.entries[i].cuisines);
+					for (j in res.entries[i].cuisines){
+						// console.log(res.entries[i].cuisines[j]);
+						cuisines.push(res.entries[i].cuisines[j]);
+						// console.log(cuisines)
+					}
+					cuisines = $.unique(cuisines);
+			}
+
+			var restaurants = [];
+			for (r in res.entries){
+				for(c in cuisines){
+					if(!(cuisines[c] in restaurants)){
+						restaurants[cuisines[c]] = [];
+					}
+
+					if(res.entries[r].cuisines.includes(cuisines[c])){
+						restaurants[cuisines[c]].push(res.entries[r]);
+						// restaurants[cuisines[c]].push(r);
+					}
+					else{
+						// console.log(res.entries[r].cuisines, c);
+					}
+				} 
+			}
+			console.log(restaurants);
+			console.log('FINAL: ', cuisines);
+		 
+		  }
+		});
 }
 
 //----------------------AJAX REQUEST-----------------------------------------/ 
@@ -200,3 +201,4 @@
 		
 
 </html>
+

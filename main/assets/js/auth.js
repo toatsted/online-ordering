@@ -5,22 +5,22 @@ var config = {
     projectId: "healthy-gorilla",
     storageBucket: "healthy-gorilla.appspot.com",
     messagingSenderId: "394761604278"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
 
- var database = firebase.database();
- var user;
- var ref = firebase.database().ref();
- var userId = JSON.parse(localStorage.getItem("UID"));
- console.log("The current UID is: " + userId);
- // console.log(ref);
+var database = firebase.database();
+var user;
+var ref = firebase.database().ref();
+var userId = JSON.parse(localStorage.getItem("UID"));
+console.log("The current UID is: " + userId);
+// console.log(ref);
 
 
-ref.on("value", function(snapshot) {
-   // console.log(snapshot.val());
+ref.on("value", function (snapshot) {
+    // console.log(snapshot.val());
 }, function (error) {
-   console.log("Error: " + error.code);
+    console.log("Error: " + error.code);
 });
 
 
@@ -28,104 +28,96 @@ var refId = firebase.database().ref("users/" + userId);
 // console.log(refId.key);
 
 
-$("#register-btn").on("click", function(){
-		var email = $("#register_email").val().trim();
-		var password = $("#register_password").val().trim();
-		var displayName = $("#register_name").val().trim();
-		
-		firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
-			return user.updateProfile({
-				displayName: displayName
-			});
-		}).catch(function(error) {
-		   console.log(error.code);
-		   console.log(error.message);
-		   return;
-		});
+$("#register-btn").on("click", function () {
+    var email = $("#register_email").val().trim();
+    var password = $("#register_password").val().trim();
+    var displayName = $("#register_name").val().trim();
 
-		console.clear();
-		isLoggedIn();
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+        return user.updateProfile({
+            displayName: displayName
+        });
+    }).catch(function (error) {
+        console.log(error.code);
+        console.log(error.message);
+        return;
+    });
 
-	});
+    console.clear();
+    isLoggedIn();
 
-
-
-$("#login-btn").on("click", function(){
-		var email = $("#login_email").val().trim();
-		var password = $("#login_password").val().trim();
-		var user = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-		   if(error.code == "auth/invalid-email"){
-		   	$('#login-modal').modal('open');
-		   	alert("Incorrect email format.");
-		   console.log(error.code);
-		   console.log(error.message);
-		   return;
-		   }
-		   if(error.code == "auth/user-not-found"){
-		   	$('#login-modal').modal('open');
-		   	alert("Invalid email or password");
-		   console.log(error.code);
-		   console.log(error.message);
-		   return;
-		   }else{
-		   	$('#login-modal').modal('close');
-		   }
-		   
-		});
-		console.clear();
-		isLoggedIn();
 });
 
 
 
-$("#signOutBtn").on("click", function(){
-	 // if(userId === null){
-	 // 	alert("You need to be logged in to log out!")
-	 // }
-		firebase.auth().signOut().then(function() {
-		   console.clear();
-		   console.log("Logged out!")
-		   localStorage.removeItem('UID');
-		   isLoggedIn();
+$("#login-btn").on("click", function () {
+    var email = $("#login_email").val().trim();
+    var password = $("#login_password").val().trim();
+    var user = firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        if (error.code == "auth/invalid-email") {
+            $('#login-modal').modal('open');
+            alert("Incorrect email format.");
+            console.log(error.code);
+            console.log(error.message);
+            return;
+        }
+        if (error.code == "auth/user-not-found") {
+            $('#login-modal').modal('open');
+            alert("Invalid email or password");
+            console.log(error.code);
+            console.log(error.message);
+            return;
+        } else {
+            $('#login-modal').modal('close');
+        }
 
-		}, function(error) {
-		   console.log(error.code);
-		   console.log(error.message);
-		});
-
-	});
-
-
-function isLoggedIn(){
-firebase.auth().onAuthStateChanged(function(user) {
-		  if (user) {
-		    console.log("User is logged in.");
-		    	user = firebase.auth().currentUser;
-				userId = firebase.auth().currentUser.uid;
-				localStorage.setItem("UID", JSON.stringify(userId));
-				  console.log(user);
-                  console.log(user.displayName);
-		 		  console.log(userId);
-                  $("#helloName").show();
-                  $("#helloName").html("Hello, " + user.displayName + "!");
-                  $("#signInBtn").hide();
-                  $("#signOutBtn").show();
-		  } else {
-            $("#signInBtn").show();
-            $("#signOutBtn").hide();
-            $("#helloName").empty();
-            $("#helloName").hide();
-		    console.log("No user logged in!");
-		  }
+    });
+    console.clear();
+    isLoggedIn();
 });
+
+
+$("#logout-btn").on("click", function () {
+    if (userId === null) {
+        alert("You need to be logged in to log out!")
+    }
+    firebase.auth().signOut().then(function () {
+        console.clear();
+        console.log("Logged out!")
+        localStorage.removeItem('UID');
+        isLoggedIn();
+
+    }, function (error) {
+        console.log(error.code);
+        console.log(error.message);
+    });
+
+    showForm();
+
+});
+
+
+function isLoggedIn() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            console.log("User is logged in.");
+            user = firebase.auth().currentUser;
+            userId = firebase.auth().currentUser.uid;
+            localStorage.setItem("UID", JSON.stringify(userId));
+            console.log(user);
+            console.log(userId);
+        } else {
+            console.log("No user logged in!");
+        }
+    });
 }
 
 console.clear();
 isLoggedIn();
 
- 
-$(function() {
-    
+
+$(function () {
+
     var $formLogin = $('#login-form');
     var $formLost = $('#lost-form');
     var $formRegister = $('#register-form');
@@ -135,10 +127,10 @@ $(function() {
     var $msgShowTime = 2000;
 
     $("form").submit(function () {
-        switch(this.id) {
+        switch (this.id) {
             case "login-form":
-                var $lg_email=$('#login_email').val();
-                var $lg_password=$('#login_password').val();
+                var $lg_email = $('#login_email').val();
+                var $lg_password = $('#login_password').val();
                 if ($lg_email == "ERROR") {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
                 } else {
@@ -147,7 +139,7 @@ $(function() {
                 return false;
                 break;
             case "lost-form":
-                var $ls_email=$('#lost_email').val();
+                var $ls_email = $('#lost_email').val();
                 if ($ls_email == "ERROR") {
                     msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
                 } else {
@@ -157,8 +149,8 @@ $(function() {
                 break;
             case "register-form":
                 // var $rg_name=$('#register_name').val();
-                var $rg_email=$('#register_email').val();
-                var $rg_password=$('#register_password').val();
+                var $rg_email = $('#register_email').val();
+                var $rg_password = $('#register_password').val();
                 if ($rg_email == "ERROR") {
                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
                 } else {
@@ -171,48 +163,59 @@ $(function() {
         }
         return false;
     });
-    
-    $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
-    $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
-    $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
-    $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
-    $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
-    $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
-    
-    function modalAnimate ($oldForm, $newForm) {
+
+    $('#login_register_btn').click(function () {
+        modalAnimate($formLogin, $formRegister)
+    });
+    $('#register_login_btn').click(function () {
+        modalAnimate($formRegister, $formLogin);
+    });
+    $('#login_lost_btn').click(function () {
+        modalAnimate($formLogin, $formLost);
+    });
+    $('#lost_login_btn').click(function () {
+        modalAnimate($formLost, $formLogin);
+    });
+    $('#lost_register_btn').click(function () {
+        modalAnimate($formLost, $formRegister);
+    });
+    $('#register_lost_btn').click(function () {
+        modalAnimate($formRegister, $formLost);
+    });
+
+    function modalAnimate($oldForm, $newForm) {
         var $oldH = $oldForm.height();
         var $newH = $newForm.height();
-        $divForms.css("height",$oldH);
-        $oldForm.fadeToggle($modalAnimateTime, function(){
-            $divForms.animate({height: $newH}, $modalAnimateTime, function(){
+        $divForms.css("height", $oldH);
+        $oldForm.fadeToggle($modalAnimateTime, function () {
+            $divForms.animate({
+                height: $newH
+            }, $modalAnimateTime, function () {
                 $newForm.fadeToggle($modalAnimateTime);
             });
         });
     }
-    
-    function msgFade ($msgId, $msgText) {
-        $msgId.fadeOut($msgAnimateTime, function() {
+
+    function msgFade($msgId, $msgText) {
+        $msgId.fadeOut($msgAnimateTime, function () {
             $(this).text($msgText).fadeIn($msgAnimateTime);
         });
     }
-    
+
     function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
         var $msgOld = $divTag.text();
         msgFade($textTag, $msgText);
         $divTag.addClass($divClass);
         $iconTag.removeClass("glyphicon-chevron-right");
         $iconTag.addClass($iconClass + " " + $divClass);
-        setTimeout(function() {
+        setTimeout(function () {
             msgFade($textTag, $msgOld);
             $divTag.removeClass($divClass);
             $iconTag.addClass("glyphicon-chevron-right");
             $iconTag.removeClass($iconClass + " " + $divClass);
-  		}, $msgShowTime);
+        }, $msgShowTime);
     }
 });
-
-
-
 
 // $("#addInfoBtn").on("click", function(evt){
 // 	evt.preventDefault();
@@ -251,7 +254,7 @@ $(function() {
 // 		 userEmail = $("#emailInput").val("");
 // 	 	return;
 // 	 }
-	 	
+
 
 // 	 database.ref('users/' + userId).update(acctInfo);
 // 	 userFirstName = $("#firstNameInput").val("");
@@ -283,7 +286,7 @@ $(function() {
 // 		  // console.log(name_val);
 // 		  // var id_val = childSnapshot.val().lastName;
 // 		  // console.log(id_val);
-	
+
 // 		  // $("#name").append(name_val);
 // 		  // $("#id").append(id_val);
 
@@ -291,7 +294,7 @@ $(function() {
 // 		});
 
 // 		hideForm();
-	
+
 // 	}
 
 // function hideForm(){

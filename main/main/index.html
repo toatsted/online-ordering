@@ -9,8 +9,7 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="../assetsMaterialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"
-    />
+    <link href="../assetsMaterialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../assets/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <style type="text/css">
         @font-face {
@@ -282,7 +281,7 @@
         <div class="main-container">
             <div id="hero" class="hero hero--index" style="opacity:0.6;">
                 <div class="container">
-                        <h1 id = "helloName"></h1>
+                    <h1 id="helloName"></h1>
                     <h1 style="font-size: 9.2rem; font-family: Cookie">Healthy Gorilla</h1>
                     <a href="index.html#searchZip" class="btn btn-primary btn-lg">Get Started</a>
 
@@ -297,19 +296,21 @@
                         <div class="solution__inner">
                             <h2 class="solution__header">Enter your zipcode</h2>
                             <p class="solution__body">Search what is near you!</p>
-                            <form>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">my_location</i>
-                                    <input id="icon_prefix" type="number" class="validate" data-length="5">
-                                    <label for="icon_prefix">Zip Code</label>
-                                </div>
-                            </form>
-                            <a href="#" class="btn btn-primary btn-lg">Enter</a>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix" style="color:rgb(4, 63, 4);">my_location</i>
+                                            <input id="zipcode" type="text" class="validate" maxlength="5">
+                                            <label for="zipcode">Your Zip Code</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-lg" id="zipcode">Enter</a>
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
 
@@ -335,6 +336,7 @@
     <script src="../assets/js/auth.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/maps.js"></script>
+
 </body>
 
 </html>

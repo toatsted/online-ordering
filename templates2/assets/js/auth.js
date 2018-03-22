@@ -78,10 +78,10 @@ $("#login-btn").on("click", function(){
 
 
 
-$("#logout-btn").on("click", function(){
-	 if(userId === null){
-	 	alert("You need to be logged in to log out!")
-	 }
+$("#signOutBtn").on("click", function(){
+	 // if(userId === null){
+	 // 	alert("You need to be logged in to log out!")
+	 // }
 		firebase.auth().signOut().then(function() {
 		   console.clear();
 		   console.log("Logged out!")
@@ -92,8 +92,6 @@ $("#logout-btn").on("click", function(){
 		   console.log(error.code);
 		   console.log(error.message);
 		});
-
-		showForm();
 
 	});
 
@@ -108,8 +106,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 				  console.log(user);
                   console.log(user.displayName);
 		 		  console.log(userId);
+                  $("#helloName").show();
                   $("#helloName").html("Hello, " + user.displayName + "!");
+                  $("#signInBtn").hide();
+                  $("#signOutBtn").show();
 		  } else {
+            $("#signInBtn").show();
+            $("#signOutBtn").hide();
+            $("#helloName").empty();
+            $("#helloName").hide();
 		    console.log("No user logged in!");
 		  }
 });

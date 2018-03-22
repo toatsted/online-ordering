@@ -82,7 +82,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.html#message">Contact Us</a>
                     </li>
 
                     <li>
@@ -177,7 +177,7 @@
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.html#message">Contact Us</a>
                     </li>
                     <li>
                         <a href="account.html">Favorites</a>
@@ -282,16 +282,16 @@
         <div class="main-container">
             <div id="hero" class="hero hero--index" style="opacity:0.6;">
                 <div class="container">
-                    <h1 style="font-size: 5.2rem;">Healthy Gorilla</h1>
+                    <h1 style="font-size: 9.2rem; font-family: Cookie">Healthy Gorilla</h1>
+                    <a href="index.html#searchZip" class="btn btn-primary btn-lg">Get Started</a>
                     <h3>Delicous. Healthy. At Your Fingertips. </h3>
                 </div>
             </div>
 <!-- Scroll items are here. -->
             <div id="after-hero"></div>
-
             <div id="solutions" class="panel panel--solutions">
                 <div class="solution solution--zipSearch">
-                    <div class="solution__container">
+                    <div class="solution__container" id="searchZip">
                         <div class="solution__inner">
                             <h2 class="solution__header">Enter your zipcode</h2>
                             <p class="solution__body">Search what is near you!</p>
@@ -302,29 +302,21 @@
                                     <label for="icon_prefix">Zip Code</label>
                                 </div>
                             </form>
-                            <a href="#" class="button button--large button--solutions">Enter</a>
+                            <a href="#" class="btn btn-primary btn-lg">Enter</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="solution solution--category">
-                    <div class="solution__container">
-                        <div class="solution__inner">
-                            <h2 class="solution__header">In Austin</h2>
-                            <p class="solution__body">Check what's good in Austin, TX!
-                            </p>
-                            <!-- Insert href for cusine category options for Austin here. -->
-                            <a href="#" class="button button--large button--solutions">Enter</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+
+            
 
             <!-- Footer Starts here -->
             <footer id="footer-global" class="footer">
                 <div class="panel panel--learn-more">
                     <h3 class="learn-more__header">Interested in learning more?
-                        <a href="contact.html" data-modal="contact-modal" class="learn-more__link js-modal-trigger" style="color:#24b3e3;">
+                        <a href="contact.html#message" data-modal="contact-modal" class="learn-more__link js-modal-trigger" style="color:#24b3e3;">
                             Get in touch.</a>
                     </h3>
                 </div>

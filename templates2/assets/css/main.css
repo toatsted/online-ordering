@@ -186,8 +186,9 @@
   -webkit-box-direction:normal;
   -ms-flex-direction:column;
   flex-direction:column;
-  padding:50px 40px;
+  padding:350px 200px;
   width:100%;
+  /* margin-bottom: auto; */
   -webkit-transition:background-color .5s ease;
   transition:background-color .5s ease
 }
@@ -238,7 +239,7 @@
   .solution__inner{
       -webkit-box-pack:center;
       -ms-flex-pack:center;
-      justify-content:center;
+      /* justify-content:center; */
       padding:40px;
       border:2px dashed #188138
   }
@@ -326,7 +327,11 @@ footer{
   .learn-more__link{
       display:block
   }
+  .solution__container {
+    padding: 0px;
+  }
 }
+
 .learn-more__link:hover,.learn-more__link:focus{
   text-decoration:none
 }
@@ -486,6 +491,9 @@ footer{
  
  .loginbtn {
    background-color: #062605;
+  }
+  .btn {
+    background-color: #032504;
   }
   
   .btn:hover,

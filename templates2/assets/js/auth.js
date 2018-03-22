@@ -106,7 +106,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 				userId = firebase.auth().currentUser.uid;
 				localStorage.setItem("UID", JSON.stringify(userId));
 				  console.log(user);
+                  console.log(user.displayName);
 		 		  console.log(userId);
+                  $("#helloName").html("Hello, " + user.displayName + "!");
 		  } else {
 		    console.log("No user logged in!");
 		  }

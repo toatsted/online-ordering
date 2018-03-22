@@ -1,4 +1,4 @@
- var config = {
+var config = {
     apiKey: "AIzaSyAXgGKvPTXo6A8P-xYsolAdOuMNL3ouuV0",
     authDomain: "healthy-gorilla.firebaseapp.com",
     databaseURL: "https://healthy-gorilla.firebaseio.com",

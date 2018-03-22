@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Healthy Gorilla | Online Ordering | HG</title>
+  <title>Healthy Gorilla | HG</title>
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/home.css">
@@ -62,66 +62,138 @@
 </head>
 
 <body class="page--index no-js">
+
   <header>
-    
     <a href="./form.html" data-modal="contact-modal" aria-label="Contact HG" class="button button--contact hide-small js-modal-trigger">
       <svg class="button--contact icon show-small">
       </svg>Login
     </a>
-  </button>
+    </button>
   </header>
+
   <div class="navigation">
     <div class="navigation__container">
-      
+
       <ul id="nav-global-menu" class="js-nav-visible  navigation__list navigation__list--vertical">
-          <li >
-              <a href="#" >Solutions</a>
-            </li>
         <li class="navigation__item">
-          <a href="#" class="navigation__link menu__link js-scroll-link">Solutions</a>
+          <a href="index.html" class="navigation__link menu__link js-scroll-link">Home</a>
         </li>
         <li class="navigation__item">
-          <a href="#" class="navigation__link menu__link js-scroll-link">Customers</a>
+          <a href="contact.html" class="navigation__link menu__link js-scroll-link">Contact Us</a>
         </li>
         <li class="navigation__item">
-          <a href="#" class="navigation__link menu__link js-scroll-link">About</a>
+          <!-- Have this link land on index and scroll to the About Us section of the page. -->
+          <a href="index.html" class="navigation__link menu__link js-scroll-link">About</a>
         </li>
-        <li class="navigation__item">
-          <a href="#" class="navigation__link menu__link">Careers</a>
-        </li>
-      </ul>
-      <ul class="navigation__list navigation__list--horizontal">
-        <li class="navigation__item">
-          <a href="#" target="_blank" class="navigation__link">Customer Login
-          </a>
+        <li>
+          <!-- Modal Trigger, the 'href' points to the Modal Structure -->
+          <a class="waves-effect waves-light green darken-4 btn modal-trigger" data-toggle="modal" href="#login-modal">Sign In</a>
+          <!-- Modal Structure -->
+        
+                <div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header" align="center">
+                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                              
+                              <!-- Begin # DIV Form -->
+                              <div id="div-forms">
+                              
+                                  <!-- Begin # Login Form -->
+                                  <form id="login-form">
+                                  <div class="modal-body">
+                              <div id="div-login-msg">
+                                              <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-login-msg">Type your email and password.</span>
+                                          </div>
+                              <input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
+                              <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                                        
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button id = "login-btn" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                          </div>
+                                <div>
+                                              <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End # Login Form -->
+                                  
+                                  <!-- Begin | Lost Password Form -->
+                                  <form id="lost-form" style="display:none;">
+                                <div class="modal-body">
+                              <div id="div-lost-msg">
+                                              <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-lost-msg">Type your e-mail.</span>
+                                          </div>
+                              <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                                          </div>
+                                          <div>
+                                              <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                              <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End | Lost Password Form -->
+                                  
+                                  <!-- Begin | Register Form -->
+                                  <form id="register-form" style="display:none;">
+                                  <div class="modal-body">
+                              <div id="div-register-msg">
+                                              <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                              <span id="text-register-msg">Register an account.</span>
+                                          </div>
+                              <!-- <input id="register_name" class="form-control" type="text" placeholder="Name" required> -->
+                                          <input id="register_name" class="form-control" type="text" placeholder="Name" required>
+                                          <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                                          <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                                </div>
+                              <div class="modal-footer">
+                                          <div>
+                                              <button id = "register-btn" type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                                          </div>
+                                          <div>
+                                              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                          </div>
+                              </div>
+                                  </form>
+                                  <!-- End | Register Form -->
+                                  
+                              </div>
+                              <!-- End # DIV Form -->
+                              
+                    </div>
+                  </div>
+                </div>
         </li>
       </ul>
     </div>
   </div>
+  
   <div id="mobile-nav-trigger" class="button--x mobile-nav-button">
     <div class="button--x__line button--x__top"></div>
     <div class="button--x__line button--x__mid"></div>
     <div class="button--x__line button--x__bottom"></div>
   </div>
+
+
   <div id="main">
     <div class="main-container">
       <div id="hero" class="hero hero--index">
         <div class="container">
           <h1>Healthy Gorilla</h1>
-          <h3>Delicous. Healthy. Delivered to You. </h3>
-          <a href="#" target="_blank" class="button button--about">Check it out</a>
+          <h3>Delicous. Healthy. At Your Fingertips. </h3>
+          <a href="#" target="_blank" class="button button--about">Get Started</a>
         </div>
-        <ul class="animated-dots">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+
       </div>
       <div id="after-hero"></div>
       <div id="solutions" class="panel panel--solutions">
@@ -147,6 +219,8 @@
           </div>
         </div>
       </div>
+
+      
       <div id="about-HG" class="panel panel--about">
         <div class="container">
           <div class="about__info">

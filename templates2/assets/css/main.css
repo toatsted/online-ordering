@@ -483,49 +483,50 @@ footer{
    color: black;
  }
 
+ 
  .loginbtn {
    background-color: #062605;
- }
-
- .btn:hover,
- .btn-large:hover {
-   background-color: #1B5E20;
- }
-
- .btn:focus,
- .btn-large:focus,
- .btn-floating:focus {
-   background-color: rgb(7, 31, 8);
- }
-
-/* CSS for modal. */
-#login_register_btn{
-  float: left;
-  margin-left: 5px;
-
-}
-
-#login_lost_btn{
-  float: left;
-
-}
-
-#login-btn{
-  float: left;
-  margin-right: 5px;
-
-}
-
-#register_login_btn{
-float: left;
-}
-
-#register-btn{
-  float: left;
-  margin-right: 5px;
-}
-
-.modal {
+  }
+  
+  .btn:hover,
+  .btn-large:hover {
+    background-color: #1B5E20;
+  }
+  
+  .btn:focus,
+  .btn-large:focus,
+  .btn-floating:focus {
+    background-color: rgb(7, 31, 8);
+  }
+  
+  /* CSS for modal. */
+  #login_register_btn{
+    float: left;
+    margin-left: 5px;
+    
+  }
+  
+  #login_lost_btn{
+    float: left;
+    
+  }
+  
+  #login-btn{
+    float: left;
+    margin-right: 5px;
+    
+  }
+  
+  #register_login_btn{
+    float: left;
+  }
+  
+  #register-btn{
+    float: left;
+    margin-right: 5px;
+  }
+  
+  .modal {
     display: none;
     position: fixed;
     left: 0;
@@ -539,8 +540,11 @@ float: left;
     overflow-y: hidden !important;
     border-radius: 2px;
     will-change: top, opacity;
-}
-/* End CSS for Modal. */
+  }
+  .modal-overlay {
+   z-index: 0;
+  }
+  /* End CSS for Modal. */
 
  @media only screen and (max-width: 992px) {
    .parallax-container .section {

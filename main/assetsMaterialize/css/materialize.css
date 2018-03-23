@@ -4472,7 +4472,7 @@ html {
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 932px) {
   html {
     font-size: 14.5px;
   }

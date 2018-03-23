@@ -3,6 +3,10 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+/*This is my example on how to edit directly in github */
+
+
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -4468,7 +4472,7 @@ html {
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 932px) {
   html {
     font-size: 14.5px;
   }
@@ -7571,7 +7575,7 @@ input[type=range]:focus::-ms-fill-upper {
   right: 0;
   height: 120vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 997;
+  z-index: 800;
   will-change: opacity;
 }
 

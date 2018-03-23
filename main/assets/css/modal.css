@@ -1,0 +1,10 @@
+#map {
+        height: 100%;
+      }
+
+.modal .modal-content {
+    padding: 24px;
+    /* margin-bottom: 69px; */
+    height: 320px;
+    margin-bottom: 0px;
+}

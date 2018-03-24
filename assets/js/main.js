@@ -16,20 +16,32 @@ $(document).ready(() => {
   })
 
 
-  (function ($) {
-    $(function () {
+  // (function ($) {
+  //   $(function () {
       
-      $('.button-collapse').sideNav({
+  //     $('.button-collapse').sideNav({
+  //       closeOnClick: true
+  //     });
+      
+
+  //     $('.parallax').parallax();
+      
+  //   }); // end of document ready
+  // })(jQuery); // end of jQuery name space
+
+
+  
+$(document).ready(function () {
+    $('.button-collapse').sideNav({
         closeOnClick: true
       });
       
-
-      $('.parallax').parallax();
-      
-    }); // end of document ready
-  })(jQuery); // end of jQuery name space
+  });
   
-
+  $(document).ready(function () {
+      $('.parallax').parallax();
+  });
+  
 
   
   $(document).ready(function () {

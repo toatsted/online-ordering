@@ -12,7 +12,7 @@ var center = new google.maps.LatLng(30.2953758,-97.74336929999998);
 var center2 = new google.maps.LatLng(30.2872554,-97.7250153);
 var center3 = new google.maps.LatLng(30.2789954,-97.74239169999998);
 
-function initialize() {
+function initMap() {
 
     var mapOptions = {
         zoom: 12,
@@ -42,4 +42,4 @@ function initialize() {
     });
 }
 
-initialize();
+initMap();

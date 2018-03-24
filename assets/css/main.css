@@ -591,4 +591,10 @@ footer{
   display: none;
  }
 
-  
+#theImg{
+  width: 25px;
+  height:25px;
+      position: relative;
+    top: 7px;
+    margin-left: 5px;
+  }

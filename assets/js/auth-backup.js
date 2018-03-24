@@ -1,88 +1,163 @@
-
+ 
 var config = {
-    apiKey: "AIzaSyAXgGKvPTXo6A8P-xYsolAdOuMNL3ouuV0",
-    authDomain: "healthy-gorilla.firebaseapp.com",
-    databaseURL: "https://healthy-gorilla.firebaseio.com",
-    projectId: "healthy-gorilla",
-    storageBucket: "healthy-gorilla.appspot.com",
-    messagingSenderId: "394761604278"
+    apiKey: "AIzaSyCIVlT1DRkM-pfQbEVuVp-zXPQAw2-wYas",
+    authDomain: "chi-lantro-delivery-platform.firebaseapp.com",
+    databaseURL: "https://chi-lantro-delivery-platform.firebaseio.com",
+    projectId: "chi-lantro-delivery-platform",
+    storageBucket: "chi-lantro-delivery-platform.appspot.com",
+    messagingSenderId: "356504711264"
   };
   firebase.initializeApp(config);
+
 
 
  var database = firebase.database();
  var user;
  var ref = firebase.database().ref();
  var userId = JSON.parse(localStorage.getItem("UID"));
- console.log("The current UID is: " + userId);
- // console.log(ref);
+ console.log("The UID is: " + userId);
+
 
 
 ref.on("value", function(snapshot) {
-   // console.log(snapshot.val());
+   console.log(snapshot.val());
 }, function (error) {
    console.log("Error: " + error.code);
 });
 
+function appendToHTML(){
+		var userDataRef = firebase.database().ref("users/" + userId).orderByKey();
+		userDataRef.once("value").then(function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+		  var key = childSnapshot.key;
+		  // console.log(key);
+		  var childData = childSnapshot.val();              
+		  console.log(key + ": " + childData);
+		  // var name_val = childSnapshot.val().firstName;
+		  // console.log(name_val);
+		  // var id_val = childSnapshot.val().lastName;
+		  // console.log(id_val);
+	
+		  // $("#name").append(name_val);
+		  // $("#id").append(id_val);
+
+		  });
+		});
+
+		hideForm();
+	
+	}
+
+function hideForm(){
+	$("#update_account").hide();
+}
+
+function showForm(){
+	$("#update_account").show();
+}
+
 
 var refId = firebase.database().ref("users/" + userId);
-// console.log(refId.key);
+console.log(refId.key);
+
+$("#addInfoBtn").on("click", function(evt){
+	evt.preventDefault();
+
+	 var userFirstName = $("#firstNameInput").val().trim();
+	 var userLastName = $("#lastNameInput").val().trim();
+	 var userAddress = $("#addressInput").val().trim();
+	 var userPhone = $("#phoneNumberInput").val().trim();
+	 var userEmail = $("#emailInput").val().trim();
+	 var modified = new Date();
+	 userId = JSON.parse(localStorage.getItem("UID"));
+	 console.log(userFirstName);
+	 console.log(userLastName);
+	 console.log(userAddress);
+	 console.log(userPhone);
+	 console.log(userEmail);
+	 console.log(modified);
+	 console.log(userId);
+
+	 var acctInfo = {
+	 		userId: userId,
+		    firstName: userFirstName,
+		    lastName: userLastName,
+		    address: userAddress,
+		    phone: userPhone,
+		    email: userEmail,
+		    lastModified: modified
+	 };
+
+	 if(userId === null){
+	 	alert("You do not have an account!");
+	 	 userFirstName = $("#firstNameInput").val("");
+		 userLastName = $("#lastNameInput").val("");
+		 userAddress = $("#addressInput").val("");
+		 userPhone = $("#phoneNumberInput").val("");
+		 userEmail = $("#emailInput").val("");
+	 	return;
+	 }
+	 	
+
+	 database.ref('users/' + userId).update(acctInfo);
+	 userFirstName = $("#firstNameInput").val("");
+	 userLastName = $("#lastNameInput").val("");
+	 userAddress = $("#addressInput").val("");
+	 userPhone = $("#phoneNumberInput").val("");
+	 userEmail = $("#emailInput").val("");
+	 alert("You updated your account information!");
+
+
+
+	 appendToHTML();
+});
 
 
 $("#register-btn").on("click", function(){
 		var email = $("#register_email").val().trim();
 		var password = $("#register_password").val().trim();
-		var displayName = $("#register_name").val().trim();
 		
-		firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
-			return user.updateProfile({
-				displayName: displayName
-			});
-		}).catch(function(error) {
+		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 		   console.log(error.code);
 		   console.log(error.message);
-		   return;
 		});
 
-		console.clear();
+<<<<<<< HEAD
+<<<<<<< HEAD
+		console.log("The UID is: " + userId);
+
+=======
+>>>>>>> 32f1bb2d83e694ea6b6fb983f1fa8fa7bd2c1458
+=======
+
+>>>>>>> 7875d20c27812619f6f18106f74a87ec954ded83
 		isLoggedIn();
-
 	});
-
 
 
 $("#login-btn").on("click", function(){
 		var email = $("#login_email").val().trim();
 		var password = $("#login_password").val().trim();
+
 		var user = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 		   if(error.code == "auth/invalid-email"){
-		   	$('#login-modal').modal('open');
 		   	alert("Incorrect email format.");
-		   console.log(error.code);
-		   console.log(error.message);
-		   return;
 		   }
 		   if(error.code == "auth/user-not-found"){
-		   	$('#login-modal').modal('open');
 		   	alert("Invalid email or password");
+		   }
 		   console.log(error.code);
 		   console.log(error.message);
-		   return;
-		   }else{
-		   	$('#login-modal').modal('close');
-		   }
-		   
 		});
-		console.clear();
-		isLoggedIn();
+
+			//console.clear();
+   			console.log(user);
 });
 
-
-
-$("#signOutBtn").on("click", function(){
-	 // if(userId === null){
-	 // 	alert("You need to be logged in to log out!")
-	 // }
+$("#logout-btn").on("click", function(){
+	 if(userId === null){
+	 	alert("You need to be logged in to log out!")
+	 }
 		firebase.auth().signOut().then(function() {
 		   console.clear();
 		   console.log("Logged out!")
@@ -94,35 +169,69 @@ $("#signOutBtn").on("click", function(){
 		   console.log(error.message);
 		});
 
+		showForm();
+
 	});
+
+$("#update-btn").on("click", function(){
+	showForm();
+});
 
 
 function isLoggedIn(){
 firebase.auth().onAuthStateChanged(function(user) {
 		  if (user) {
-		    console.log("User is logged in.");
+		    console.log("success");
 		    	user = firebase.auth().currentUser;
 				userId = firebase.auth().currentUser.uid;
 				localStorage.setItem("UID", JSON.stringify(userId));
-				  console.log(user);
-                  console.log(user.displayName);
-		 		  console.log(userId);
-                  $("#helloName").show();
-                  $("#helloName").html("Hello, " + user.displayName + "!");
-                  $("#signInBtn").hide();
-                  $("#signOutBtn").show();
+				return true;
 		  } else {
-            $("#signInBtn").show();
-            $("#signOutBtn").hide();
-            $("#helloName").empty();
-            $("#helloName").hide();
 		    console.log("No user logged in!");
+		    return false;
 		  }
+		  console.log(user);
+		  console.log(userId);
+		
+		  // userId = user.uid;
+		
 });
 }
 
-console.clear();
+
+$('#login-btn').on("click", function(e) {
+    e.preventDefault();
+    console.log("HELLO");
+    // Coding
+    $('#login-modal').modal('toggle'); //or  $('#IDModal').modal('hide');
+    return false;
+});
+
+$('#register-btn').on("click", function(e) {
+    e.preventDefault();
+    console.log("HELLO AGAIN");
+    // Coding
+    $('#login-modal').modal('toggle'); //or  $('#IDModal').modal('hide');
+    return false;
+});
+
+function updateButton(){
+	if(userId === null){
+		$("#update-btn").hide();
+	}else{
+		$("#update-btn").show();
+	}
+}
+
+
+updateButton();
 isLoggedIn();
+hideForm();
+
+
+
+
+
 
  
 $(function() {
@@ -213,88 +322,52 @@ $(function() {
 });
 
 
+//---------------------------------------------------------------------------//
+
+//  
 
 
-// $("#addInfoBtn").on("click", function(evt){
-// 	evt.preventDefault();
+//---------------------------------------------------------------------------//
 
-// 	 var userFirstName = $("#firstNameInput").val().trim();
-// 	 var userLastName = $("#lastNameInput").val().trim();
-// 	 var userAddress = $("#addressInput").val().trim();
-// 	 var userPhone = $("#phoneNumberInput").val().trim();
-// 	 var userEmail = $("#emailInput").val().trim();
-// 	 var modified = new Date();
-// 	 userId = JSON.parse(localStorage.getItem("UID"));
-// 	 console.log(userFirstName);
-// 	 console.log(userLastName);
-// 	 console.log(userAddress);
-// 	 console.log(userPhone);
-// 	 console.log(userEmail);
-// 	 console.log(modified);
-// 	 console.log(userId);
+  // user.updateProfile({
+		//   displayName: $("#register_name").val().trim(),
+		// }).then(function() {
+		//   var displayName = user.displayName;
 
-// 	 var acctInfo = {
-// 	 		userId: userId,
-// 		    firstName: userFirstName,
-// 		    lastName: userLastName,
-// 		    address: userAddress,
-// 		    phone: userPhone,
-// 		    email: userEmail,
-// 		    lastModified: modified
-// 	 };
-
-// 	 if(userId === null){
-// 	 	alert("You do not have an account!");
-// 	 	 userFirstName = $("#firstNameInput").val("");
-// 		 userLastName = $("#lastNameInput").val("");
-// 		 userAddress = $("#addressInput").val("");
-// 		 userPhone = $("#phoneNumberInput").val("");
-// 		 userEmail = $("#emailInput").val("");
-// 	 	return;
-// 	 }
-	 	
-
-// 	 database.ref('users/' + userId).update(acctInfo);
-// 	 userFirstName = $("#firstNameInput").val("");
-// 	 userLastName = $("#lastNameInput").val("");
-// 	 userAddress = $("#addressInput").val("");
-// 	 userPhone = $("#phoneNumberInput").val("");
-// 	 userEmail = $("#emailInput").val("");
-// 	 alert("You updated your account information!");
+		// }, function(error) {
+		//   console.log(error);
+		// });
 
 
-
-// 	 appendToHTML();
-// });
+ //--------------------------------------------------------------------------//
 
 
-// function appendToHTML(){
-// 		var userDataRef = firebase.database().ref("users/" + userId).orderByKey();
-// 		userDataRef.once("value").then(function(snapshot) {
-// 		snapshot.forEach(function(childSnapshot) {
-// 		  var key = childSnapshot.key;
-// 		  // console.log(key);
-// 		  var childData = childSnapshot.val();              
-// 		  console.log(key + ": " + childData);
-// 		  // var name_val = childSnapshot.val().firstName;
-// 		  // console.log(name_val);
-// 		  // var id_val = childSnapshot.val().lastName;
-// 		  // console.log(id_val);
-	
-// 		  // $("#name").append(name_val);
-// 		  // $("#id").append(id_val);
+// var provider = new firebase.auth.GoogleAuthProvider();
 
-// 		  });
-// 		});
-
-// 		hideForm();
-	
-// 	}
-
-// function hideForm(){
-// 	$("#update_account").hide();
+// function googleSignin() {
+//    firebase.auth()
+   
+//    .signInWithPopup(provider).then(function(result) {
+//       var token = result.credential.accessToken;
+//       var user = result.user;
+		
+//       console.log(token)
+//       console.log(user)
+//    }).catch(function(error) {
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+		
+//       console.log(error.code)
+//       console.log(error.message)
+//    });
 // }
 
-// function showForm(){
-// 	$("#update_account").show();
+// function googleSignout() {
+//    firebase.auth().signOut()
+	
+//    .then(function() {
+//       console.log('Signout Succesfull')
+//    }, function(error) {
+//       console.log('Signout Failed')  
+//    });
 // }

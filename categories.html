@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon.ico/apple-icon-60x60.png">
@@ -22,7 +21,6 @@
     <meta name="msapplication-TileImage" content="./assets/favicon.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Favicons links End -->
-
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -83,38 +81,36 @@
             font-style: normal;
         }
     </style>
-        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-
 </head>
 
-<body onload="initMap()">
+<body>
 
     <div class="navbar-fixed">
         <nav style="background-color: white;">
             <div class="nav-wrapper">
                 <!-- Logo goes here -->
                 <a [pphref="index.html" class="brand-logo right">
-                    <img class="responsive-img" src="./assets/images/HG.png">
+                    <img class="responsive-img" src="./assets/images/placeholder2.jpg">
                 </a>
                 <!-- Collapsable menu is here -->
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="left hide-on-med-and-down">
-                    <li class="active">
+                    <li>
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="contact.html#message">Contact Us</a>
+                        <a href="contact.html">Contact Us</a>
                     </li>
 
                     <li>
-                        <a href="account.html">My Favorites</a>
+                        <a href="account.html"> My Favorites</a>
                     </li>
                     <li>
                         <!-- Modal Trigger, the 'href' points to the Modal Structure -->
-                        <a class="waves-effect waves-light loginbtn btn modal-trigger" data-toggle="modal" href="#login-modal" id="signInBtn">Sign In</a>
-                        <a class="waves-effect waves-light loginbtn btn modal-trigger" data-toggle="modal" href="#login-modal" id="signOutBtn">Sign Out</a>
+                        <a class="waves-effect waves-light loginbtn btn modal-trigger" data-toggle="modal" href="#login-modal">Sign In</a>
+
                         <!-- Modal Structure -->
                         <div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
                             style="display: none;">
@@ -176,7 +172,7 @@
                                                     <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
                                                     <span id="text-register-msg">Register an account.</span>
                                                 </div>
-                                                <input id="register_name" class="form-control" type="text" placeholder="Name" required>
+                                                <!-- <input id="register_name" class="form-control" type="text" placeholder="Name" required> -->
                                                 <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
                                                 <input id="register_password" class="form-control" type="password" placeholder="Password" required>
                                             </div>
@@ -200,7 +196,7 @@
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li>
-                        <a href="contact.html#message">Contact Us</a>
+                        <a href="contact.html">Contact Us</a>
                     </li>
                     <li>
                         <a href="account.html">Favorites</a>
@@ -305,68 +301,230 @@
         <div class="main-container">
             <div id="hero" class="hero hero--index" style="opacity:0.6;">
                 <div class="container">
-                    <h1 id="helloName"></h1>
-                    <h1 style="font-size: 9.2rem; font-family: Cookie">Healthy Gorilla</h1>
-                    <a id="getStarted" href="index.html#searchZip" class="btn btn-primary btn-lg">Get Started</a>
-
-                    <h3>Delicous. Healthy. At Your Fingertips. </h3>
+                    <!-- <h1 style="font-size: 5.2rem;">Healthy Gorilla</h1>
+                    <h3>Delicous. Healthy. At Your Fingertips. </h3> -->
                 </div>
             </div>
             <!-- Scroll items are here. -->
-            <div id="after-hero">
-                <div class="row" id="cardDiv">
-                  </div>
-            </div>
+            <div id="after-hero" style="margin-top:0;"></div>
+
             <div id="solutions" class="panel panel--solutions">
                 <div class="solution solution--zipSearch">
-                    <div class="solution__container" id="searchZip">
+                    <div class="solution__container">
                         <div class="solution__inner">
-                            <h2 class="solution__header">Enter your zipcode</h2>
-                            <p class="solution__body">Search what is near you!</p>
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix" style="color:rgb(4, 63, 4);">my_location</i>
-                                            <input id="zipcode" type="text" class="validate" maxlength="5">
-                                            <label for="zipcode">Your Zip Code</label>
+
+                            <div class="section no-pad-bot">
+                                <div class="container">
+                                    <div class="row center">
+                                        <h5 class="header col s12 light">Itaque earum rerum hic tenetur a sapiente delectus.</h5>
+                                        <div class="carousel">
+
+                                            <a class="carousel-item responsive-img" href="#asian">
+                                                <div class="card">
+                                                    <img src="./assets/images/asian1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Asian Cuisine</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#american">
+                                                <div class="card">
+                                                    <img src="./assets/images/american1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>American Cuisine</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#european">
+                                                <div class="card">
+                                                    <img src="./assets/images/european1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>European Cuisine</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#greenjuice">
+                                                <div class="card">
+                                                    <img src="./assets/images/greenjuice.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Juice Bars</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#italian">
+                                                <div class="card">
+                                                    <img src="./assets/images/italian1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Italian Cuising</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#mediterranean">
+                                                <div class="card">
+                                                    <img src="./assets/images/mediterranean1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Mediterranean Cuisine</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#mexican">
+                                                <div class="card">
+                                                    <img src="./assets/images/mexican1.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Mexiacan Cuisine</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+
+                                            <a class="carousel-item responsive-img" href="#salad">
+                                                <div class="card">
+                                                    <img src="./assets/images/salad.jpg" style="width: 100%">
+                                                    <ul class="collapsible" data-collapsible="accordion">
+                                                        <li>
+                                                            <div class="collapsible-header">
+                                                                <i class="material-icons">description</i>Great Salads</div>
+                                                            <div class="collapsible-body">
+                                                                <p> Morbi sem neque, posuere et pretium eget, bibendum sollicitudin
+                                                                    lacus. Aliquam eleifend sollicitudin diam, eu mattis
+                                                                    nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                                                                    massa odio, condimentum sed ipsum ac, gravida ultrices
+                                                                    erat.
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
-                            <button class="btn btn-primary btn-lg" id="enterButton">Enter</button>
+
+                            <div class="container" id="restaurantInfo">
+                                <div class="row">
+
+                                    <div class="col s4">
+                                        <h5>Dump Restaurant info here.</h5>
+
+                                    </div>
+
+                                    <div class="col s8">
+                                        <h5>Dump Map here.</h5>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
             <!-- Footer Starts here -->
             <footer id="footer-global" class="footer">
                 <div class="panel panel--learn-more">
                     <h3 class="learn-more__header">Interested in learning more?
-                        <a href="contact.html#message" data-modal="contact-modal" class="learn-more__link js-modal-trigger" style="color:#5af542;">
+                        <a href="contact.html" data-modal="contact-modal" class="learn-more__link js-modal-trigger" style="color:#5af542;">
                             Get in touch.</a>
                     </h3>
                 </div>
             </footer>
-
+            <div class="footer-background"></div>
         </div>
     </div>
 
 
     <!-- Scripts -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBW6WwJFidXvRkuC78VtjeiAR4PG3uApw&callback=initMap">
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="./assets/materialize/js/materialize.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/maps.js"></script>
-<!--     <script src="./assets/js/main.js"></script>
- -->    <script src="./assets/js/cards.js"></script>
-
 </body>
 
 </html>

@@ -27,9 +27,13 @@
 					$("<a>")
 						.attr("href", value.website)
 						.text(value.name)
+						.append("<p>", value.address1)
+						.append("<p>", value.phone)
 						.addClass("collection-item")
 						.attr("target", "_blank")
+						.append('<a><img id="theImg" src="assets/images/heart.png"/></a>')
 				)
+
 		})
 
 
@@ -104,3 +108,7 @@
 	}
 // })
 $("#enterButton").on("click", codeAddress); 
+
+$("#theImg").on("click", function(){
+	alert("Added to favorites!")
+});

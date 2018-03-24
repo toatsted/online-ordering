@@ -1,6 +1,19 @@
 
 $(document).ready(() => {
 
+  (function ($) {
+    $(function () {
+      
+      $('.button-collapse').sideNav({
+        closeOnClick: true
+      });
+      
+
+      $('.parallax').parallax();
+      
+    }); // end of document ready
+  })(jQuery); // end of jQuery name space
+  
   $("#getStarted").on("click", function() {
     let btn = $(this);
 
@@ -16,19 +29,6 @@ $(document).ready(() => {
   })
 
 
-  (function ($) {
-    $(function () {
-      
-      $('.button-collapse').sideNav({
-        closeOnClick: true
-      });
-      
-
-      $('.parallax').parallax();
-      
-    }); // end of document ready
-  })(jQuery); // end of jQuery name space
-  
 
 
   

@@ -81,9 +81,11 @@
             font-style: normal;
         }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
 </head>
 
-<body>
+<body onload="initMap()">
 
     <div class="navbar-fixed">
         <nav style="background-color: white;">
@@ -216,13 +218,16 @@
                 <div class="container">
                     <h1 id="helloName"></h1>
                     <h1 style="font-size: 9.2rem; font-family: Cookie">Healthy Gorilla</h1>
-                    <a href="index.html#searchZip" class="btn btn-primary btn-lg">Get Started</a>
+                    <a id="getStarted" href="index.html#searchZip" class="btn btn-primary btn-lg">Get Started</a>
 
                     <h3>Delicous. Healthy. At Your Fingertips. </h3>
                 </div>
             </div>
             <!-- Scroll items are here. -->
-            <div id="after-hero"></div>
+            <div id="after-hero">
+                <div class="row" id="cardDiv">
+                </div>
+            </div>
             <div id="solutions" class="panel panel--solutions">
                 <div class="solution solution--zipSearch">
                     <div class="solution__container" id="searchZip">
@@ -240,7 +245,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <a href="#" class="btn btn-primary btn-lg" id="zipcode">Enter</a>
+                            <button class="btn btn-primary btn-lg" id="enterButton">Enter</button>
                         </div>
                     </div>
                 </div>
@@ -260,11 +265,13 @@
 
 
     <!-- Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBW6WwJFidXvRkuC78VtjeiAR4PG3uApw&callback=initMap">
+    </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="./assets/materialize/js/materialize.js"></script>
     <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/maps.js"></script>
+    <script src="./assets/js/cards.js"></script>
     <script src="./assets/js/main.js"></script>
 
 </body>

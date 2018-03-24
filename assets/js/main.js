@@ -1,6 +1,6 @@
 
 $(document).ready(() => {
-  
+
   (function ($) {
     $(function () {
       
@@ -14,6 +14,21 @@ $(document).ready(() => {
     }); // end of document ready
   })(jQuery); // end of jQuery name space
   
+  $("#getStarted").on("click", function() {
+    let btn = $(this);
+
+    btn.attr("style", "display: none;");
+  })
+
+  $("#enterButton").on("click", function() {
+    
+    $('#hero').animate({
+      opacity: ".15"
+    }, 1000);
+
+  })
+
+
 
 
   
@@ -71,11 +86,7 @@ $(document).ready(() => {
       $("#mobile-demo").show()
     }
   };
-  console.log(width);
   width;
-
-  
-  // SAM'S MAIN.JS STARTS HERE
   
   $('#mobile-nav-trigger').on('click', function () {
     console.log("hello");
@@ -97,14 +108,11 @@ $(document).ready(() => {
   });
   
   $(document).ready(function () {
-    console.log("lol");
     $('.statistic__number').animate({
       opacity: '1'
     }, "slow");
   });
-  
-  // SAM'S MAIN.JS ENDS HERE
-  
+    
   
   
 })
